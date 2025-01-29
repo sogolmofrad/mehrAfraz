@@ -1,0 +1,41 @@
+[
+  {
+    "name": "آنتالیا",
+    "primaryImage": "/images/antalya-1.png",
+    "hotels": [
+      {
+        "hotelName": "Hotel Akra Hotel Antalya",
+        "stars": 5,
+        "location": "آنتالیا",
+        "images": [
+          "/images/antalya-hotel-1.jpeg",
+          "/images/antalya-hotel-1.jpeg",
+          "/images/antalya-hotel-1.jpeg",
+          "/images/antalya-hotel-1.jpeg"
+        ]
+      },
+      {
+        "hotelName": "Concorde De Luxe Resort",
+        "stars": 5,
+        "location": "آنتالیا",
+        "images": [
+          "/images/antalya-hotel-2.jpeg",
+          "/images/antalya-hotel-2.jpeg",
+          "/images/antalya-hotel-2.jpeg",
+          "/images/antalya-hotel-2.jpeg"
+        ]
+      },
+      {
+        "hotelName": "Swandor Hotels & Resorts",
+        "stars": 5,
+        "location": "آنتالیا",
+        "images": [
+          "/images/antalya-hotel-3.jpeg",
+          "/images/antalya-hotel-3.jpeg",
+          "/images/antalya-hotel-3.jpeg",
+          "/images/antalya-hotel-3.jpeg"
+        ]
+      }
+    ]
+  }
+]
