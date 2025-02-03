@@ -12,7 +12,7 @@ function ReserveHomeBox() {
   }
 
   return (
-    <div className="flex flex-col -mt-[2rem] z-10 w-[95%] bg-white rounded-[2.4rem] p-[3rem] items-start">
+    <div className="flex flex-col -mt-[2rem] z-10 bg-white rounded-[2.4rem] p-[3rem] mx-auto items-start max-w-[1150px]">
       <div className="reserveButtonGp flex self-center bg-greyLight py-[1rem] px-[2rem] rounded-[8rem]">
         <button
           className={`${

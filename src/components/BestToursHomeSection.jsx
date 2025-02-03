@@ -3,7 +3,7 @@ import SectionHeaders from "./SectionHeaders";
 import { FaArrowLeftLong } from "react-icons/fa6";
 function BestToursHomeSection() {
   return (
-    <section className="tourHome section mt-[7rem] px-[7rem]">
+    <section className="tourHome section mt-[7rem] px-[10rem] max-w-[1400px] mx-auto">
       <SectionHeaders
         title="تور های مسافرتی مهر پرواز"
         description="جدید ترین و پرطرفدار ترین تور های گردشگری مهرپرواز"

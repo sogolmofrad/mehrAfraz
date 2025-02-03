@@ -29,7 +29,7 @@ function DestinationsSectionHome() {
     setActiveButton("right");
   };
   return (
-    <section className="mt-[10rem] px-[7rem]">
+    <section className="tourHome section mt-[7rem] px-[10rem] max-w-[1400px] mx-auto">
       <SectionHeaders
         title="مقاصد گردشگری مهرپرواز"
         description="با بزرگترین مقصدهای گردشگری جهان و آداب و رسوم و فرهنگ هایش  آشنا شوید"

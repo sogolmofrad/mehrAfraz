@@ -8,7 +8,12 @@ import HomeSliderSection from "../components/HomeSliderSection";
 import SpecialHotelsSectionHome from "../components/SpecialHotelsSectionHome";
 import SupportSectionHome from "../components/SupportSectionHome";
 import ToursHomeSection from "../components/ToursHomeSection";
+
 import Footer from "../components/Footer";
+
+import MembershipSectionHome from "../components/MembershipSectionHome";
+import MagazineSectionHome from "../components/MagazineSectionHome";
+
 
 function Home() {
   const [hotels, setHotels] = useState([]);
@@ -35,8 +40,13 @@ function Home() {
       <AdvertSectionHome />
       <DestinationsSectionHome />
       <AdvertiseWithVideoHome />
-      {hotels[0] && <SpecialHotelsSectionHome hotel={hotels[0]} />}
-      <Footer />
+      {hotels &&
+      hotels.map((hotel,i) => <SpecialHotelsSectionHome hotel={hotel} key={i}/>)
+       }
+       <MembershipSectionHome/>
+       <MagazineSectionHome/>
+       <Footer/>
+
     </div>
   );
 }

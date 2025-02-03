@@ -20,6 +20,7 @@ export default {
         pinkExtraLight: "#FFF6F6",
         redSemiTransparent: "rgba(25, 5, 5, 0.49)",
         linkBlue: "#0D68F0",
+        greyTransparent:"rgba(25, 5, 5, 0.49)",
       },
       backgroundImage: {
         "linear-black":

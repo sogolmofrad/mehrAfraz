@@ -2,7 +2,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 function TourCardHome({ tour }) {
   return (
-    <div className="w-[29rem] bg-white p-[1.4rem]  rounded-[3.2rem]">
+    <div className="bg-white p-[1.4rem]  rounded-[3.2rem]">
       <figure className="relative h-[23rem]">
         <img
           src={tour.image}

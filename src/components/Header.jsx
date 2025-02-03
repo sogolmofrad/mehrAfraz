@@ -4,7 +4,8 @@ function Header() {
   return (
     <>
       {/* Desktop Header */}
-      <header className="hidden relative lg:flex header justify-between bg-white py-[5rem] px-[10rem] shadow-lg">
+      <header className="container grid grid-cols-12 hidden relative lg:flex header justify-between bg-white py-[5rem] px-[10rem] shadow-lg">
+        
         <div className="flex  items-center  w-[60%]">
           <div>
             <img src="/images/logo.webp" alt="logo" className="w-[9rem]" />
