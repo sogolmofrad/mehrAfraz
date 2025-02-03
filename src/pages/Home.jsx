@@ -8,8 +8,12 @@ import HomeSliderSection from "../components/HomeSliderSection";
 import SpecialHotelsSectionHome from "../components/SpecialHotelsSectionHome";
 import SupportSectionHome from "../components/SupportSectionHome";
 import ToursHomeSection from "../components/ToursHomeSection";
+
+import Footer from "../components/Footer";
+
 import MembershipSectionHome from "../components/MembershipSectionHome";
 import MagazineSectionHome from "../components/MagazineSectionHome";
+
 
 function Home() {
   const [hotels, setHotels] = useState([]);
@@ -41,7 +45,8 @@ function Home() {
        }
        <MembershipSectionHome/>
        <MagazineSectionHome/>
-       
+       <Footer/>
+
     </div>
   );
 }
