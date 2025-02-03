@@ -16,11 +16,18 @@ function BestToursHome() {
     fetchBestTours();
   }, []);
   return (
-    <div className="flex my-[3rem]  gap-[1.6rem]">
-      {bestTours.map((tour, i) => (
+    <div className="container mx-auto my-[5rem] max-w-[1200px]">
+      <div className="grid grid-cols-12 gap-[3rem]">
+        
+        {bestTours.map((tour, i) => (
+          <div className="col-span-6 md:col-span-4 lg:col-span-2">
         <BestTourCard bestTour={tour} key={i} />
+        </div>
       ))}
+        
+      </div>
     </div>
+    
   );
 }
 

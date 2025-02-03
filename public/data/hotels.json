@@ -11,7 +11,7 @@
           "/images/antalya-hotel-1.jpeg",
           "/images/antalya-hotel-1.jpeg",
           "/images/antalya-hotel-1.jpeg",
-          "/images/antalya-hotel-1.jpeg"
+          "/images/antalya-hotel-1.jpeg"  
         ]
       },
       {
@@ -34,6 +34,122 @@
           "/images/antalya-hotel-3.jpeg",
           "/images/antalya-hotel-3.jpeg",
           "/images/antalya-hotel-3.jpeg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "پاریس",
+    "primaryImage": "/images/paris1.jpg",
+    "hotels": [
+      {
+        "hotelName": "Limak Arcadia Sport Resort Hotel",
+        "stars": 5,
+        "location": "پاریس",
+        "images": [
+          "/images/paris2.jpg",
+          "/images/paris2.jpg",
+          "/images/paris2.jpg",
+          "/images/paris2.jpg"  
+        ]
+      },
+      {
+        "hotelName": "Casa Margot Hotel",
+        "stars": 5,
+        "location": "پاریس",
+        "images": [
+          "/images/paris3.jpg",
+          "/images/paris3.jpg",
+          "/images/paris3.jpg",
+          "/images/paris3.jpg"
+        ]
+      },
+      {
+        "hotelName": "The Land Of Legendds Kingdom Hotel",
+        "stars": 5,
+        "location": "پاریس",
+        "images": [
+          "/images/paris4.jpg",
+          "/images/paris4.jpg",
+          "/images/paris4.jpg",
+          "/images/paris4.jpg"
+        ]
+      }
+    ]
+  }, {
+    "name": "ازمیر",
+    "primaryImage": "/images/izmir1.jpg",
+    "hotels": [
+      {
+        "hotelName": "Hyatt Regency İzmir İstinyePark",
+        "stars": 5,
+        "location": "ازمیر",
+        "images": [
+          "/images/izmir2.jpg",
+          "/images/izmir2.jpg",
+          "/images/izmir2.jpg",
+          "/images/izmir2.jpg"  
+        ]
+      },
+      {
+        "hotelName": "Izmir Marriott Hotel",
+        "stars": 5,
+        "location": "ازمیر",
+        "images": [
+          "/images/izmir3.jpg",
+          "/images/izmir3.jpg",
+          "/images/izmir3.jpg",
+          "/images/izmir3.jpg"
+        ]
+      },
+      {
+        "hotelName": "yndham Grand İzmir Özdilek Thermal",
+        "stars": 5,
+        "location": "ازمیر",
+        "images": [
+          "/images/izmir4.jpg",
+          "/images/izmir4.jpg",
+          "/images/izmir4.jpg",
+          "/images/izmir4.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "استانبول",
+    "primaryImage": "/images/izmir1.jpg",
+    "hotels": [
+      {
+        "hotelName": "Hyatt Regency İzmir İstinyePark",
+        "stars": 5,
+        "location": "استانبول",
+        "images": [
+          "/images/izmir2.jpg",
+          "/images/izmir2.jpg",
+          "/images/izmir2.jpg",
+          "/images/izmir2.jpg"  
+        ]
+      },
+      {
+        "hotelName": "Izmir Marriott Hotel",
+        "stars": 5,
+        "location": "استانبول",
+        "images": [
+          "/images/izmir3.jpg",
+          "/images/izmir3.jpg",
+          "/images/izmir3.jpg",
+          "/images/izmir3.jpg"
+        ]
+      },
+      {
+        "hotelName": "yndham Grand İzmir Özdilek Thermal",
+        "stars": 5,
+        "location": "استانبول",
+        "images": [
+          "/images/izmir4.jpg",
+          "/images/izmir4.jpg",
+          "/images/izmir4.jpg",
+          "/images/izmir4.jpg"
         ]
       }
     ]

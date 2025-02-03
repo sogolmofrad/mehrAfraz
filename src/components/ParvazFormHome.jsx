@@ -74,7 +74,7 @@ function ParvazFormHome() {
             <MdFlight className="w-[2.4rem] h-[2.4rem]" />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="from" className="text-[2rem] font-bold">
+            <label htmlFor="from" className="text-[2rem] font-[700]">
               مبدا
             </label>
             <input

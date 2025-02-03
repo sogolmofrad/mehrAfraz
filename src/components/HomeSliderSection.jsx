@@ -13,8 +13,11 @@ import ReserveHomeBox from "./ReserveHomeBox";
 
 function HomeSliderSection() {
   return (
-    <div className="px-[7rem] flex flex-col items-center">
-      <div className="max-w-[130rem] px-[5rem] flex justify-center items-center mt-[10rem]">
+    <div className="px-[10rem] flex flex-col items-center justify-center">
+      <div className="container mx-auto max-w-[1200px]">
+        <div className="mt-[5rem] grid grid-cols-12 gap-4">
+        <div className="col-span-12">
+    
         <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
           <SwiperSlide>
             <div className="relative w-full h-full">
@@ -57,6 +60,10 @@ function HomeSliderSection() {
             />
           </SwiperSlide>
         </Swiper>
+    
+        </div>
+        </div>
+        
       </div>
       <ReserveHomeBox />
     </div>
