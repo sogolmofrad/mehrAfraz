@@ -8,6 +8,7 @@ import HomeSliderSection from "../components/HomeSliderSection";
 import SpecialHotelsSectionHome from "../components/SpecialHotelsSectionHome";
 import SupportSectionHome from "../components/SupportSectionHome";
 import ToursHomeSection from "../components/ToursHomeSection";
+import Footer from "../components/Footer";
 
 function Home() {
   const [hotels, setHotels] = useState([]);
@@ -35,6 +36,7 @@ function Home() {
       <DestinationsSectionHome />
       <AdvertiseWithVideoHome />
       {hotels[0] && <SpecialHotelsSectionHome hotel={hotels[0]} />}
+      <Footer />
     </div>
   );
 }
