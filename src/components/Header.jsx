@@ -1,11 +1,22 @@
+import { useState } from "react";
 import Navbar from "./Navbar";
+import LoginModal from "./utils/LoginModal";
 
 function Header() {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  function openLoginModal() {
+    setShowLoginModal(true);
+  }
+
+  function closeLoginModal() {
+    setShowLoginModal(false);
+  }
   return (
     <>
       {/* Desktop Header */}
-      <header className="w-full hidden relative lg:block header justify-between bg-white py-section  shadow-lg">
-        <div className="container flex max-w-container mx-auto justify-between">
+      <header className="w-full hidden relative lg:block header justify-between bg-white py-[1.6rem]  shadow-lg">
+        <div className="container flex max-w-container mx-auto justify-between p-0">
           <div className="flex  items-center  w-[60%]">
             <div>
               <img src="/images/logo.webp" alt="logo" className="w-[9rem]" />
@@ -36,7 +47,10 @@ function Header() {
               <span className="text-white text-[1.8rem]">۰۲۱-۸۸۵۰۷۱۹۰</span>
             </button>
 
-            <button className="flex items-center py-[1rem] px-[2rem] mx-[1rem] rounded-[4rem] border-2 border-greyExtraLight hover:shadow-lg">
+            <button
+              className="flex items-center py-[1rem] px-[2rem] mx-[1rem] rounded-[4rem] border-2 border-greyExtraLight hover:shadow-lg"
+              onClick={openLoginModal}
+            >
               <img
                 src="/images/icons8-menu-32.png"
                 className="pb-[2px] w-[1.8rem] ml-[1rem]"
@@ -49,6 +63,7 @@ function Header() {
           </div>
         </div>
       </header>
+      {showLoginModal && <LoginModal onClose={closeLoginModal} />}
       {/* Mobile Header */}
       <header className="flex lg:hidden justify-between w-full items-center">
         <img

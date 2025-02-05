@@ -34,6 +34,7 @@ export default {
         redSemiTransparent: "rgba(25, 5, 5, 0.49)",
         linkBlue: "#0D68F0",
         greyTransparent:"rgba(25, 5, 5, 0.6)",
+        blackTransparent:"rgba(0,0,0,0.5)"
       },
       backgroundImage: {
         "linear-black":
@@ -55,7 +56,7 @@ export default {
         "section":"3.2rem",
       },
       margin:{
-        "section":"10rem",
+        "section":"5rem",
       },
       gap:{
         "grid":"2.4rem"

@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="flex flex-col gap-[2rem] mt-section">
       <footer className="footer  bg-white shadow-lg">
-        <div className="container mx-auto mt-[5rem] py-[5rem] px-[7rem] max-w-[1300px]">
+        <div className="container mx-auto mt-section  px-[7rem] max-w-[1300px]">
           <div className="flex justify-between gap-[3rem]">
             <div className="w-[40%]  flex flex-col gap-[3rem]">
               <img src="/images/logo.webp" alt="logo" className="w-[12rem]" />

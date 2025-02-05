@@ -9,7 +9,7 @@ import HotelInfoCard from "./HotelInfoCard";
 
 function SpecialHotelsSectionHome({ hotel }) {
   return (
-    <section className="tourHome section max-w-container mx-auto">
+    <section className="tourHome section max-w-container mx-auto mt-0">
       <SectionHeaders
         title={`هتل های ویژه ${hotel.name}`}
         description="با بزرگترین مقصدهای گردشگری جهان و آداب و رسوم و فرهنگ هایش آشنا شوید"

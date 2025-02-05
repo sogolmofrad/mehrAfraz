@@ -16,7 +16,7 @@ function DesinationToursHome({ containerRef }) {
     fetchTours();
   }, []);
   return (
-    <div className="tourContainer container grid grid-cols-12 gap-grid my-[3rem] max-w-container">
+    <div className="tourContainer container grid grid-cols-12 gap-grid  max-w-container">
       {destinationTours.map((tour, i) => (
         <DestinationTourCard tour={tour} key={i} />
       ))}

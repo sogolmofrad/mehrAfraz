@@ -17,7 +17,7 @@ function AdvertiseWithVideoHome() {
   }
 
   return (
-    <section className="section  max-w-container mx-auto flex justify-between items-center">
+    <section className="section  max-w-container mx-auto flex justify-between items-center mb-section">
       <div className="sectionDescription w-[50%] flex flex-col gap-[2rem] justify-between items-start">
         <h2 className="text-[3.2rem] font-bold">تجربه سفری به یاد ماندنی!</h2>
         <p className="text-justify text-[1.8rem]/[3.6rem] font-light">
