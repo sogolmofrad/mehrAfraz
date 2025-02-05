@@ -9,7 +9,7 @@ function SubNavbarTourIran() {
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-redPrimary pr-[7px]"
+                className="text-black border-r-2 border-red_5 pr-[7px]"
               >
                 تور استان آذربایجان شرقی
               </Link>
@@ -28,7 +28,7 @@ function SubNavbarTourIran() {
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-redPrimary pr-[7px]"
+                className="text-black border-r-2 border-red_5 pr-[7px]"
               >
                 تور استان آذربایجان غربی
               </Link>
@@ -47,7 +47,7 @@ function SubNavbarTourIran() {
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-redPrimary pr-[7px]"
+                className="text-black border-r-2 border-red_5 pr-[7px]"
               >
                 تور استان اردبیل
               </Link>
@@ -65,7 +65,7 @@ function SubNavbarTourIran() {
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-redPrimary pr-[7px]"
+                className="text-black border-r-2 border-red_5 pr-[7px]"
               >
                 تور استان آذربایجان شرقی
               </Link>
@@ -84,7 +84,7 @@ function SubNavbarTourIran() {
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-redPrimary pr-[7px]"
+                className="text-black border-r-2 border-red_5 pr-[7px]"
               >
                 تور استان آذربایجان غربی
               </Link>
@@ -103,7 +103,7 @@ function SubNavbarTourIran() {
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-redPrimary pr-[7px]"
+                className="text-black border-r-2 border-red_5 pr-[7px]"
               >
                 تور استان اردبیل
               </Link>

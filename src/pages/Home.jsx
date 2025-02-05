@@ -13,7 +13,8 @@ import Footer from "../components/Footer";
 
 import MembershipSectionHome from "../components/MembershipSectionHome";
 import MagazineSectionHome from "../components/MagazineSectionHome";
-
+import AboutSection from "../components/AboutSection";
+import QuestionAnswerSection from "../components/QuestionAnswerSection";
 
 function Home() {
   const [hotels, setHotels] = useState([]);
@@ -32,7 +33,6 @@ function Home() {
 
   return (
     <div>
-      <Header />
       <HomeSliderSection />
       <ToursHomeSection />
       <SupportSectionHome />
@@ -41,12 +41,13 @@ function Home() {
       <DestinationsSectionHome />
       <AdvertiseWithVideoHome />
       {hotels &&
-      hotels.map((hotel,i) => <SpecialHotelsSectionHome hotel={hotel} key={i}/>)
-       }
-       <MembershipSectionHome/>
-       <MagazineSectionHome/>
-       <Footer/>
-
+        hotels.map((hotel, i) => (
+          <SpecialHotelsSectionHome hotel={hotel} key={i} />
+        ))}
+      <MembershipSectionHome />
+      <MagazineSectionHome />
+      <AboutSection />
+      <QuestionAnswerSection />
     </div>
   );
 }

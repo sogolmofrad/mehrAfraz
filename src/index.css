@@ -6,8 +6,8 @@
 	font-family: IRANSansXFaNum;
 	font-style: normal;
 	font-weight: 100;
-	src: url('woff/IRANSansXFaNum-thin.woff') format('woff'),
-		 url('woff2/IRANSansXFaNum-thin.woff2') format('woff2');
+	src: url('/fonts/iransans/Woff/IRANSansXFaNum-Thin.woff') format('woff'),
+		 url('/fonts/iransans/Woff2/IRANSansXFaNum-Thin.woff2') format('woff2');
   }
   
   @font-face {
@@ -69,7 +69,13 @@
 
 @layer components {
 	.reserveGpBtn {
-	  @apply text-[1.6rem]  text-grey py-[1rem] px-[3rem] rounded-[6rem];
+	  @apply text-[1.6rem]  text-gray_7 py-[1rem] px-[3rem] rounded-[6rem];
+	}
+	.section{
+		@apply py-section mt-section;
+	}
+	.container{
+		@apply py-[3.2rem]
 	}
   }
 
@@ -87,16 +93,15 @@ body {
   padding-left: 10rem;
   padding-right: 10rem; */
   direction: rtl;
-  background-color: #f9f9f9;
+  background-color: #F6F6F6;
 }
 
 
-h1,h2,h3,h4,h5,h6{
+ h1,h2,h3,h4,h5,h6{
 	
 		font-family: 'IRANSansXFaNum', sans-serif !important;
-		font-weight: 700 !important;
-	
-}
+		font-weight: 700 !important; 	
+} 
 
 .svg {
 	max-width: none !important;
@@ -163,7 +168,9 @@ padding-bottom: 4rem;
 	display: none;
 }
 
-
+.textBox a{
+	color:#0D68F0;  /*linkBlue color*/
+}
 
 /* reponsiveness */
 

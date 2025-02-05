@@ -22,7 +22,7 @@ function TourCardHome({ tour }) {
         <p className="text-[1.6rem] text-grey">
           {tour.duration} شب و {tour.duration + 1} روز
         </p>
-        <button className="text-redPrimary  text-[1.4rem] flex px-[1rem] py-[5px] rounded-[2.4rem] hover:bg-pinkExtraLight hover:text-redSecondary active:border-2 active:border-pinkLight active:text-redPrimar active:bg-white">
+        <button className="text-red_5  text-[1.4rem] flex px-[1rem] py-[5px] rounded-[2.4rem] hover:bg-pinkExtraLight hover:text-redSecondary active:border-2 active:border-pinkLight active:text-redPrimar active:bg-white">
           <span>تاریخ های تور</span>
           <span className="mr-[1rem]">
             <FaArrowLeftLong />

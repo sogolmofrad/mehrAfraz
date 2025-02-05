@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function AdvertSectionHome() {
   return (
-    <section className="tourHome section mt-[7rem] px-[10rem] max-w-[1400px] mx-auto">
+    <section className="tourHome section   max-w-container mx-auto">
       <div className="flex gap-[1.6rem]">
         <Link to="">
           <figure>

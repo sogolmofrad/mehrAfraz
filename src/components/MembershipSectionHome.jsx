@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
 function MembershipSectionHome() {
-    return (
-        <section className="section mt-[10rem] px-[10rem] max-w-[1400px] mx-auto">
-            <div className="max-w-[1200px]">
-                <figure>
-                    <img src='\images\membership.png' alt='memberShip' />
-                </figure>
-            </div>
-        </section>
-    )
+  return (
+    <section className="section  max-w-container mx-auto">
+      <div className="w-full">
+        <figure>
+          <img src="\images\membership.png" alt="memberShip" />
+        </figure>
+      </div>
+    </section>
+  );
 }
 
-export default MembershipSectionHome
+export default MembershipSectionHome;

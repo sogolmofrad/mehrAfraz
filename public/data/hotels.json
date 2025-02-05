@@ -7,34 +7,19 @@
         "hotelName": "Hotel Akra Hotel Antalya",
         "stars": 5,
         "location": "آنتالیا",
-        "images": [
-          "/images/antalya-hotel-1.jpeg",
-          "/images/antalya-hotel-1.jpeg",
-          "/images/antalya-hotel-1.jpeg",
-          "/images/antalya-hotel-1.jpeg"  
-        ]
+        "image":"/images/antalya-hotel-1.jpeg" 
       },
       {
         "hotelName": "Concorde De Luxe Resort",
         "stars": 5,
         "location": "آنتالیا",
-        "images": [
-          "/images/antalya-hotel-2.jpeg",
-          "/images/antalya-hotel-2.jpeg",
-          "/images/antalya-hotel-2.jpeg",
-          "/images/antalya-hotel-2.jpeg"
-        ]
+        "image":"/images/antalya-hotel-1.jpeg"
       },
       {
         "hotelName": "Swandor Hotels & Resorts",
         "stars": 5,
         "location": "آنتالیا",
-        "images": [
-          "/images/antalya-hotel-3.jpeg",
-          "/images/antalya-hotel-3.jpeg",
-          "/images/antalya-hotel-3.jpeg",
-          "/images/antalya-hotel-3.jpeg"
-        ]
+        "image":"/images/antalya-hotel-1.jpeg"
       }
     ]
   },
@@ -46,34 +31,19 @@
         "hotelName": "Limak Arcadia Sport Resort Hotel",
         "stars": 5,
         "location": "پاریس",
-        "images": [
-          "/images/paris2.jpg",
-          "/images/paris2.jpg",
-          "/images/paris2.jpg",
-          "/images/paris2.jpg"  
-        ]
+        "image":"/images/paris1.jpg"
       },
       {
         "hotelName": "Casa Margot Hotel",
         "stars": 5,
         "location": "پاریس",
-        "images": [
-          "/images/paris3.jpg",
-          "/images/paris3.jpg",
-          "/images/paris3.jpg",
-          "/images/paris3.jpg"
-        ]
+        "image":"/images/paris2.jpg"
       },
       {
         "hotelName": "The Land Of Legendds Kingdom Hotel",
         "stars": 5,
         "location": "پاریس",
-        "images": [
-          "/images/paris4.jpg",
-          "/images/paris4.jpg",
-          "/images/paris4.jpg",
-          "/images/paris4.jpg"
-        ]
+        "image":"/images/paris3.jpg"
       }
     ]
   }, {
@@ -84,34 +54,19 @@
         "hotelName": "Hyatt Regency İzmir İstinyePark",
         "stars": 5,
         "location": "ازمیر",
-        "images": [
-          "/images/izmir2.jpg",
-          "/images/izmir2.jpg",
-          "/images/izmir2.jpg",
-          "/images/izmir2.jpg"  
-        ]
+        "image":"/images/izmir3.jpg"
       },
       {
         "hotelName": "Izmir Marriott Hotel",
         "stars": 5,
         "location": "ازمیر",
-        "images": [
-          "/images/izmir3.jpg",
-          "/images/izmir3.jpg",
-          "/images/izmir3.jpg",
-          "/images/izmir3.jpg"
-        ]
+        "image":"/images/izmir3.jpg"
       },
       {
         "hotelName": "yndham Grand İzmir Özdilek Thermal",
         "stars": 5,
         "location": "ازمیر",
-        "images": [
-          "/images/izmir4.jpg",
-          "/images/izmir4.jpg",
-          "/images/izmir4.jpg",
-          "/images/izmir4.jpg"
-        ]
+        "image":"/images/izmir3.jpg"
       }
     ]
   },
@@ -123,34 +78,19 @@
         "hotelName": "Hyatt Regency İzmir İstinyePark",
         "stars": 5,
         "location": "استانبول",
-        "images": [
-          "/images/izmir2.jpg",
-          "/images/izmir2.jpg",
-          "/images/izmir2.jpg",
-          "/images/izmir2.jpg"  
-        ]
+        "image":"/images/izmir2.jpg"
       },
       {
         "hotelName": "Izmir Marriott Hotel",
         "stars": 5,
         "location": "استانبول",
-        "images": [
-          "/images/izmir3.jpg",
-          "/images/izmir3.jpg",
-          "/images/izmir3.jpg",
-          "/images/izmir3.jpg"
-        ]
+        "image":"/images/izmir2.jpg"
       },
       {
         "hotelName": "yndham Grand İzmir Özdilek Thermal",
         "stars": 5,
         "location": "استانبول",
-        "images": [
-          "/images/izmir4.jpg",
-          "/images/izmir4.jpg",
-          "/images/izmir4.jpg",
-          "/images/izmir4.jpg"
-        ]
+        "image":"/images/izmir2.jpg"
       }
     ]
   }

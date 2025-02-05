@@ -1,24 +1,24 @@
 import React from "react";
-import SectionHeaders from "./SectionHeaders";
+import SectionHeaders from "./utils/SectionHeaders";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { LuUserRound } from "react-icons/lu";
 import { BsStopwatch } from "react-icons/bs";
 function MagazineSectionHome() {
   return (
-    <section className="section mt-[10rem] px-[10rem] max-w-[1400px] mx-auto">
+    <section className="section  max-w-container mx-auto">
       <SectionHeaders
         title="مجله گردشگری"
         description="تازه ترین خبر ها و مقالات سفر"
       >
-        <button className="text-[1.6rem] text-redPrimary flex items-center px-[1rem] py-[5px] rounded-[2.4rem] border-2 border-redPrimary hover:text-redSecondary hover:border-redSecondary">
+        <button className="text-[1.6rem] text-red_5 flex items-center px-[1rem] py-[5px] rounded-[2.4rem] border-2 border-red_5 hover:text-redSecondary hover:border-redSecondary">
           <span>مشاهده همه</span>
           <span className="mr-[1rem]">
             <FaArrowLeftLong />
           </span>
         </button>
       </SectionHeaders>
-      <div className="container mx-auto max-w-[1200px] mt-[10rem]">
-        <div className="grid grid-cols-12 gap-[3rem]">
+      <div className="container mx-auto max-w-container">
+        <div className="grid grid-cols-12 gap-grid">
           <div className="col-span-12 lg:col-span-4 ">
             <figure className="rounded-[2.4rem] h-[50rem] relative">
               <img
@@ -26,7 +26,7 @@ function MagazineSectionHome() {
                 alt="magazineBlogl"
                 className=" rounded-[2.4rem] object-cover h-full"
               />
-              <div className="absolute bg-greyTransparent w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
+              <div className="absolute bg-greyTransparent backdrop-blur-[30px] w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
                 <p className="text-white text-[2rem]">
                   موزه متروپولیتن نیویورک؛ جهانی تودرتو از قرون وسطی تا امروز
                 </p>
@@ -50,7 +50,7 @@ function MagazineSectionHome() {
                 alt="magazineBlogl"
                 className="rounded-[2.4rem] object-cover w-full h-full"
               />
-              <div className="absolute bg-greyTransparent w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
+              <div className="absolute bg-greyTransparent backdrop-blur-[30px] w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
                 <p className="text-white text-[2rem]">
                   موزه متروپولیتن نیویورک؛ جهانی تودرتو از قرون وسطی تا امروز
                 </p>
@@ -72,7 +72,7 @@ function MagazineSectionHome() {
                 alt="magazineBlogl"
                 className=" rounded-[2.4rem] object-fill w-full h-full"
               />
-              <div className="absolute bg-greyTransparent w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
+              <div className="absolute bg-greyTransparent backdrop-blur-[30px]  w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
                 <p className="text-white text-[2rem]">
                   موزه متروپولیتن نیویورک؛ جهانی تودرتو از قرون وسطی تا امروز
                 </p>
@@ -96,7 +96,7 @@ function MagazineSectionHome() {
                 alt="magazineBlogl"
                 className=" rounded-[2.4rem] object-cover h-full"
               />
-              <div className="absolute bg-greyTransparent w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
+              <div className="absolute bg-greyTransparent backdrop-blur-[30px] w-[80%] p-[1rem] rounded-[2.4rem] bottom-[2rem]  left-1/2 transform -translate-x-1/2">
                 <p className="text-white text-[2rem]">
                   موزه متروپولیتن نیویورک؛ جهانی تودرتو از قرون وسطی تا امروز
                 </p>
