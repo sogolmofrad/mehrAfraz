@@ -46,7 +46,7 @@
 	font-family: IRANSansXFaNum;
 	font-style: normal;
 	font-weight: 700;
-	src: url('/fonts/iransans/Woff/IRANSansXFaNum-Bold.wofff') format('woff'),
+	src: url('/fonts/iransans/Woff/IRANSansXFaNum-Bold.woff') format('woff'),
 		 url('/fonts/iransans/Woff2/IRANSansXFaNum-Bold.woff2') format('woff2');
   }
   
@@ -123,6 +123,10 @@ input:focus{
 }
 .navbar ul li a:hover{
 color: #fc4048;
+}
+
+.heroSection{
+	background-image: url('/images/hero.png');
 }
 
 .mySwiper{

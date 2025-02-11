@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
-function LoginModal({ onClose }) {
+function LoginModal({ onClose, onRegister }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -16,6 +16,7 @@ function LoginModal({ onClose }) {
           <form className="my-[2.8rem] flex flex-col gap-[2.8rem]">
             <input
               type="text"
+              required
               placeholder="نام گاربری"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -23,6 +24,7 @@ function LoginModal({ onClose }) {
             />
             <input
               type="password"
+              required
               placeholder="رمز عبور"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -31,11 +33,14 @@ function LoginModal({ onClose }) {
             <div className="flex flex-col gap-[2.8rem]">
               <button
                 type="submit"
-                className="w-full bg-red_5 text-white py-[1rem] px-[2rem] text-center rounded-[3.2rem] text-[1.6rem]"
+                className="w-full bg-red_5 text-white py-[1rem] px-[2rem] text-center rounded-[3.2rem] text-[1.6rem] hover:bg-red_7"
               >
                 ورود
               </button>
-              <button className="w-full text-gray_7 text-center text-[1.6rem] hover:text-red_5">
+              <button
+                className="w-full text-gray_7 text-center text-[1.6rem] hover:text-red_5"
+                onClick={onRegister}
+              >
                 ثبت نام
               </button>
             </div>

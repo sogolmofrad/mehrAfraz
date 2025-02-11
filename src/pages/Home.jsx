@@ -3,13 +3,13 @@ import AdvertiseWithVideoHome from "../components/AdvertiseWithVideoHome";
 import AdvertSectionHome from "../components/AdvertSectionHome";
 import BestToursHomeSection from "../components/BestToursHomeSection";
 import DestinationsSectionHome from "../components/DestinationsSectionHome";
-import Header from "../components/Header";
+import Header from "../components/layout/Header";
 import HomeSliderSection from "../components/HomeSliderSection";
 import SpecialHotelsSectionHome from "../components/SpecialHotelsSectionHome";
 import SupportSectionHome from "../components/SupportSectionHome";
 import ToursHomeSection from "../components/ToursHomeSection";
 
-import Footer from "../components/Footer";
+import Footer from "../components/layout/Footer";
 
 import MembershipSectionHome from "../components/MembershipSectionHome";
 import MagazineSectionHome from "../components/MagazineSectionHome";

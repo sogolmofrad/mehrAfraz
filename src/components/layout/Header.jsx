@@ -1,16 +1,25 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
-import LoginModal from "./utils/LoginModal";
+import LoginModal from "../utils/LoginModal";
+import RegisterModal from "../utils/RegisterModal";
 
 function Header() {
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   function openLoginModal() {
     setShowLoginModal(true);
   }
 
-  function closeLoginModal() {
+  function closeModal() {
     setShowLoginModal(false);
+    setShowRegisterModal(false);
+  }
+
+  function openRegisterModal(e) {
+    e.preventDefault();
+    setShowLoginModal(false);
+    setShowRegisterModal(true);
   }
   return (
     <>
@@ -63,7 +72,10 @@ function Header() {
           </div>
         </div>
       </header>
-      {showLoginModal && <LoginModal onClose={closeLoginModal} />}
+      {showLoginModal && (
+        <LoginModal onClose={closeModal} onRegister={openRegisterModal} />
+      )}
+      {showRegisterModal && <RegisterModal onClose={closeModal} />}
       {/* Mobile Header */}
       <header className="flex lg:hidden justify-between w-full items-center">
         <img

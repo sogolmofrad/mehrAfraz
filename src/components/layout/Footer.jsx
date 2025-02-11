@@ -89,44 +89,46 @@ function Footer() {
             </div>
             <div className="flex">
               <div className="flex flex-col gap-[2rem]">
-                <h3 className="text-[1.8rem] pr-[2rem]">مهر پرواز</h3>
+                <h3 className="text-[1.8rem] pr-[2rem] text-gray_8">
+                  مهر پرواز
+                </h3>
                 <nav>
                   <ul className="flex flex-col gap-[1rem]">
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/">صفحه اصلی</Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/"> درباره ما</Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/"> تماس با ما</Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/">اخبار</Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/">فرصت های شغلی</Link>
                     </li>
                   </ul>
                 </nav>
               </div>
               <div className="flex flex-col gap-[2rem]">
-                <h3 className="text-[1.8rem] pr-[2rem]">خدمات </h3>
+                <h3 className="text-[1.8rem] pr-[2rem] text-gray_8">خدمات </h3>
                 <nav>
                   <ul className="flex flex-col gap-[1rem]">
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/">رزرو تور </Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/"> بلیط پرواز</Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/"> رزرو هتل </Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/">پشتیبانی</Link>
                     </li>
-                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-greyLight">
+                    <li className="text-[1.6rem] text-gray_8 px-[2rem] py-[1rem] hover:rounded-[2.4rem] hover:bg-gray_2 ">
                       <Link to="/"> تور دلخواه</Link>
                     </li>
                   </ul>
@@ -134,7 +136,7 @@ function Footer() {
               </div>
             </div>
             <div className="w-[30%] flex flex-col gap-[3rem]">
-              <h3 className="text-[1.8rem]">عضویت در خبرنامه</h3>
+              <h3 className="text-[1.8rem] text-gray_8">عضویت در خبرنامه</h3>
               <p className="text-[1.6rem] text-gray_8">
                 برای اطلاع از جدیدترین تور های مهرپرواز ایمیل خود را وارد کنید
               </p>
@@ -213,8 +215,8 @@ function Footer() {
           </div>
         </div>
       </footer>
-      <div className="copyRight  bg-white shadow-lg">
-        <div className="container mx-auto mt-[5rem] py-[5rem]  max-w-container flex justify-between">
+      <div className="copyRight mt-[5rem] bg-white shadow-lg">
+        <div className="container mx-auto  py-[5rem]  max-w-container flex justify-between my-0">
           <p className="rtl text-[1.8rem]">
             طراحی و توسعه توسط{" "}
             <Link to="https://artimannovin.ir/" className="text-linkBlue">
