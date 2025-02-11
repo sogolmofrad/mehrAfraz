@@ -11,7 +11,7 @@ function QuestionAnswer({ question, answer }) {
       <div className="w-full question flex justify-between px-[7.7rem] py-[1.6rem]">
         <p className="text-[1.6rem] font-bold text-gray_10">{question}</p>
         <button
-          className=" text-[2.4rem] font-bold text-gray_10 hover:text-red_5"
+          className=" text-[2.4rem] font-bold text-gray_10 hover:text-mainPrimary"
           onClick={toggleAnswer}
         >
           {showAnswer ? <CiCircleMinus /> : <CiCirclePlus />}

@@ -17,7 +17,7 @@ function ReserveHomeBox() {
         <button
           className={`${
             activeBtn === 1
-              ? "reserveGpBtn bg-red_5 text-white"
+              ? "reserveGpBtn bg-mainPrimary text-white"
               : "reserveGpBtn"
           }`}
           onClick={() => handleBtnClick(1)}
@@ -27,7 +27,7 @@ function ReserveHomeBox() {
         <button
           className={`${
             activeBtn === 2
-              ? "reserveGpBtn bg-red_5 text-white"
+              ? "reserveGpBtn bg-mainPrimary text-white"
               : "reserveGpBtn"
           }`}
           onClick={() => handleBtnClick(2)}
@@ -37,7 +37,7 @@ function ReserveHomeBox() {
         <button
           className={`${
             activeBtn === 3
-              ? "reserveGpBtn bg-red_5 text-white"
+              ? "reserveGpBtn bg-mainPrimary text-white"
               : "reserveGpBtn"
           }`}
           onClick={() => handleBtnClick(3)}

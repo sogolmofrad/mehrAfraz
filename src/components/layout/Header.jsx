@@ -48,7 +48,7 @@ function Header() {
               </span>
             </div>
 
-            <button className="bg-red_5 flex items-center py-[1rem] px-[2rem]  rounded-[4rem] hover:bg-redSecondary">
+            <button className="bg-mainPrimary flex items-center py-[1rem] px-[2rem]  rounded-[4rem] hover:bg-mainSecondary">
               <img
                 src="/images/icons8-phone-50.png"
                 className="w-[2rem] h-[2rem] pb-[2px]"

@@ -122,7 +122,7 @@ input:focus{
 	font-weight: 400;
 }
 .navbar ul li a:hover{
-color: #fc4048;
+color: #3b4d5c;
 }
 
 .heroSection{
@@ -162,7 +162,7 @@ padding-bottom: 4rem;
 }
 
 .activeSliderBtn{
-	background-color: #fc4048;
+	background-color: #3b4d5c;
 }
 .activeSliderBtn svg{
 	fill:white;

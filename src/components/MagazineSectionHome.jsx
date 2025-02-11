@@ -10,7 +10,7 @@ function MagazineSectionHome() {
         title="مجله گردشگری"
         description="تازه ترین خبر ها و مقالات سفر"
       >
-        <button className="text-[1.6rem] text-red_5 flex items-center px-[1rem] py-[5px] rounded-[2.4rem] border-2 border-red_5 hover:text-redSecondary hover:border-redSecondary">
+        <button className="text-[1.6rem] text-mainPrimary flex items-center px-[1rem] py-[5px] rounded-[2.4rem] border-2 border-mainPrimary hover:text-mainSecondary hover:border-mainSecondary">
           <span>مشاهده همه</span>
           <span className="mr-[1rem]">
             <FaArrowLeftLong />

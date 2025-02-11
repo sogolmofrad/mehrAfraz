@@ -46,7 +46,7 @@ function RegisterModal({ onClose }) {
   return (
     <>
       <div className=" bg-blackTransparent backdrop-blur-[1px] w-screen h-screen absolute inset-0 z-[60]"></div>
-      <div className="relative flex justify-evenly bg-white w-[40%] border-red border-black p-[4.8rem] mx-auto z-[100] rounded-[3.2rem]">
+      <div className="relative flex justify-evenly bg-white w-[40%]  border-black p-[4.8rem] mx-auto z-[100] rounded-[3.2rem]">
         <div className="w-full">
           <div>
             <h2 className="text-[2.4rem] mb-[5px]">ثبت نام</h2>
@@ -67,7 +67,7 @@ function RegisterModal({ onClose }) {
                   onChange={(e) =>
                     dispatch({ type: "setAgencyName", payload: e.target.value })
                   }
-                  className="w-full px-[2rem] py-[1rem] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full px-[2rem] py-[1rem] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="tel"
@@ -80,7 +80,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full text-right px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full text-right px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="email"
@@ -93,7 +93,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="text"
@@ -106,7 +106,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="text"
@@ -119,7 +119,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="col-span-2 w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="col-span-2 w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
               </div>
             </div>
@@ -137,7 +137,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full px-[2rem] py-[1rem] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full px-[2rem] py-[1rem] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="text"
@@ -150,7 +150,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full text-right px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full text-right px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="email"
@@ -163,7 +163,7 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
                 <input
                   type="tell"
@@ -176,12 +176,12 @@ function RegisterModal({ onClose }) {
                       payload: e.target.value,
                     })
                   }
-                  className="w-full text-right px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-red_5"
+                  className="w-full text-right px-[1.2rem] py-[5px] text-[1.6rem] border-2 border-gray_5 rounded-[3.2rem] focus:border-mainPrimary"
                 />
               </div>
             </div>
             <div className="flex gap-[2.4rem]">
-              <button className="w-[30%]  text-gray_7 py-[1rem] px-[2rem] justify-center flex items-center gap-[1rem] text-[1.6rem] rounded-[3.2rem]  hover:text-red_5">
+              <button className="w-[30%]  text-gray_7 py-[1rem] px-[2rem] justify-center flex items-center gap-[1rem] text-[1.6rem] rounded-[3.2rem]  hover:text-mainPrimary">
                 <span>
                   <FaArrowRightLong />
                 </span>
@@ -189,7 +189,7 @@ function RegisterModal({ onClose }) {
               </button>
               <button
                 type="submit"
-                className="w-[70%] bg-red_5 text-white py-[1rem] px-[2rem] text-center rounded-[3.2rem] text-[1.6rem] hover:bg-red_7"
+                className="w-[70%] bg-mainPrimary text-white py-[1rem] px-[2rem] text-center rounded-[3.2rem] text-[1.6rem] hover:bg-mainSecondary"
               >
                 ثبت نام
               </button>

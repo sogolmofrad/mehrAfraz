@@ -5,7 +5,7 @@ function ViewAllLink({ linkUrl = "#" }) {
   return (
     <Link
       to={linkUrl}
-      className="text-[1.6rem] text-red_5 flex items-center px-[1rem] py-[5px] rounded-[2.4rem] border-2 border-red_5 hover:text-redSecondary hover:border-redSecondary"
+      className="text-[1.4rem] text-mainPrimary flex items-center px-[1rem] py-[5px] rounded-[2.4rem] border-2 border-mainPrimary hover:text-mainSecondary hover:border-mainSecondary"
     >
       <span>مشاهده بیشتر</span>
       <span className="mr-[1rem]">

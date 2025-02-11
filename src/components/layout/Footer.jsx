@@ -148,7 +148,7 @@ function Footer() {
                 />
                 <button
                   type="submit"
-                  className="text-white px-[2rem] py-[1rem] text-[1.6rem] bg-red_5 rounded-[3.2rem] hover:bg-redSecondary"
+                  className="text-white px-[2rem] py-[1rem] text-[1.6rem] bg-mainPrimary rounded-[3.2rem] hover:bg-mainSecondary"
                 >
                   ارسال
                 </button>

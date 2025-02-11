@@ -158,7 +158,7 @@ function TourFormHome() {
         </div>
         <button
           type="submit"
-          className="bg-red_5 p-[1rem] text-[2.4rem] text-white rounded-[3.2rem] hover:bg-redSecondary"
+          className="bg-mainPrimary p-[1rem] text-[2.4rem] text-white rounded-[3.2rem] hover:bg-mainSecondary"
         >
           <CiSearch />
         </button>
