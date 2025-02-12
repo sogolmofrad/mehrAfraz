@@ -79,7 +79,14 @@
 	}
   }
 
+  :root {
+	--space-super-small:1.2rem;
+	--space-small:1.4rem;
+	--space-base:1.6rem;
+	--space-medium: 2.4rem;
 
+  }
+  
 html{
   font-size: 62.5%;
   font-family: 'IRANSansXFaNum';

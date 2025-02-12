@@ -28,46 +28,35 @@ function Header() {
         <div className="container flex max-w-container mx-auto justify-between p-0">
           <div className="flex  items-center  w-[60%]">
             <div>
-              <img src="/images/logo.webp" alt="logo" className="w-[9rem]" />
+              <img src="/images/logo.webp" alt="logo" className="w-36" />
             </div>
             <Navbar />
           </div>
           <div className="flex w-[37%] justify-between items-center">
-            <img
-              src="/images/icons8-notification-50.png"
-              className="w-[2rem] h-[2rem]"
-            />
+            <img src="/images/icons8-notification-50.png" className="w-8 h-8" />
 
             <div className="flex">
-              <img
-                src="/images/icons8-search-50.png"
-                className="w-[2rem] h-[2rem]"
-              />
-              <span className="text-gray_7 text-[1.6rem] mr-[1rem]">
-                پیگیری رزرو
-              </span>
+              <img src="/images/icons8-search-50.png" className="w-8 h-8" />
+              <span className="text-gray_7 text-base mr-4">پیگیری رزرو</span>
             </div>
 
-            <button className="bg-mainPrimary flex items-center py-[1rem] px-[2rem]  rounded-[4rem] hover:bg-mainSecondary">
+            <button className="bg-mainPrimary flex items-center py-4 px-8  rounded-2xl hover:bg-mainSecondary">
               <img
                 src="/images/icons8-phone-50.png"
-                className="w-[2rem] h-[2rem] pb-[2px]"
+                className="w-8 h-8 pb-[2px]"
               />
-              <span className="text-white text-[1.8rem]">۰۲۱-۸۸۵۰۷۱۹۰</span>
+              <span className="text-white text-lg">۰۲۱-۸۸۵۰۷۱۹۰</span>
             </button>
 
             <button
-              className="flex items-center py-[1rem] px-[2rem] mx-[1rem] rounded-[4rem] border-2 border-greyExtraLight hover:shadow-lg"
+              className="flex items-center py-4 px-8 mx-4 rounded-2xl border-2 border-greyExtraLight hover:shadow-lg"
               onClick={openLoginModal}
             >
               <img
                 src="/images/icons8-menu-32.png"
-                className="pb-[2px] w-[1.8rem] ml-[1rem]"
+                className="pb-[2px] w-[1.8rem] ml-4"
               />
-              <img
-                src="/images/icons8-user-50.png"
-                className="w-[2rem]  pb-[2px]"
-              />
+              <img src="/images/icons8-user-50.png" className="w-8  pb-[2px]" />
             </button>
           </div>
         </div>
@@ -81,13 +70,13 @@ function Header() {
         <img
           src="/images/icons8-search-50.png"
           alt="searchIcon"
-          className="w-[2rem] h-[2rem]"
+          className="w-8 h-8"
         />
-        <img src="/images/logo.webp" alt="logo" className="w-[9rem]" />
+        <img src="/images/logo.webp" alt="logo" className="w-36" />
         <img
           src="/images/icons8-notification-50.png"
           alt="notificationIcon"
-          className="w-[2rem] h-[2rem]"
+          className="w-8 h-8"
         />
       </header>
     </>

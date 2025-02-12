@@ -18,9 +18,9 @@ function BestToursHome() {
   return (
     <div className="container mx-auto max-w-container">
       <div className="grid grid-cols-12 gap-grid">
-        {bestTours.map((tour, i) => (
-          <div className="col-span-6 md:col-span-4 lg:col-span-2">
-            <BestTourCard bestTour={tour} key={i} />
+        {bestTours.map((tour) => (
+          <div className="col-span-6 md:col-span-4 lg:col-span-2" key={tour.id}>
+            <BestTourCard bestTour={tour} />
           </div>
         ))}
       </div>

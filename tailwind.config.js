@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         mainPrimary: "#3b4d5c",
-        mainSecondary: "#1D262E",
+        mainSecondary: "#C4CACE",
         gray_1: "#F2F2F2",
         gray_2: "#e6e6e6",
         gray_3: "#cecece",
@@ -44,6 +44,15 @@ export default {
         "linear-red":
           "linear-gradient(to right bottom, rgba(255, 0, 0, 0.47), rgba(0,0,0,0.47))",
       },
+      fontSize: {
+        xs: "1.2rem",
+        sm: "1.4rem",
+        base: "1.6rem",
+        lg: "1.8rem",
+        xl: "2rem",
+        "2xl": "2.4rem",
+        "3xl": "3.2rem",
+      },
       fontFamily: {
         sans: ["IRANSansXFaNum", "sans-serif"], // Use your custom font as the default sans font
       },
@@ -54,14 +63,28 @@ export default {
       maxWidth: {
         container: "1200px",
       },
+      spacing: {
+        xs: "var(--space-super-small)",
+        small: "var(--space-small)",
+        base: "var(--space-base)",
+        medium: "var(--space-medium)",
+      },
+
       padding: {
         section: "3.2rem",
+        18: "4.8rem",
       },
       margin: {
         section: "5rem",
       },
       gap: {
         grid: "2.4rem",
+      },
+
+      borderRadius: {
+        lg: "2.4rem",
+        xl: "3.2rem",
+        "2xl": "4rem",
       },
     },
   },

@@ -67,14 +67,14 @@ function ParvazFormHome() {
   }
 
   return (
-    <div className="mt-[2rem]">
+    <div className="mt-8">
       <form className="form flex" onSubmit={handleSubmit}>
-        <div className="inputGp flex items-center gap-[1rem]">
-          <div className=" bg-greyLight py-[1.5rem] px-[5px] rounded-[2.4rem]">
-            <MdFlight className="w-[2.4rem] h-[2.4rem]" />
+        <div className="inputGp flex items-center gap-4">
+          <div className=" bg-greyLight py-6 px-2 rounded-lg">
+            <MdFlight className="size-medium" />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="from" className="text-[2rem] font-[700]">
+            <label htmlFor="from" className="text-xl font-bold">
               مبدا
             </label>
             <input
@@ -85,19 +85,19 @@ function ParvazFormHome() {
                 dispatch({ type: "setOrigin", payload: e.target.value })
               }
               placeholder={focusState.from ? " " : "مبدا خود را انتخاب کنید"}
-              className="text-[1.4rem] w-[22rem]"
+              className="text-sm w-[22rem]"
               onFocus={() => handleFocus("from")}
               onBlur={() => handleBlur("from")}
             />
           </div>
         </div>
 
-        <div className="inputGp flex items-center gap-[1rem]">
-          <div className=" bg-greyLight py-[1.5rem] px-[5px] rounded-[2.4rem]">
-            <MdFlight className="w-[2.4rem] h-[2.4rem]" />
+        <div className="inputGp flex items-center gap-4">
+          <div className=" bg-greyLight py-6 px-2 rounded-lg">
+            <MdFlight className="size-medium" />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="to" className="text-[2rem] font-bold">
+            <label htmlFor="to" className="text-xl font-bold">
               مقصد
             </label>
             <input
@@ -111,19 +111,19 @@ function ParvazFormHome() {
                 })
               }
               placeholder={focusState.to ? " " : "مقصد خود را انتخاب کنید"}
-              className="text-[1.4rem] w-[22rem]"
+              className="text-sm w-[22rem]"
               onFocus={() => handleFocus("to")}
               onBlur={() => handleBlur("to")}
             />
           </div>
         </div>
 
-        <div className="inputGp flex items-center gap-[1rem]">
-          <div className=" bg-greyLight py-[1.5rem] px-[5px] rounded-[2.4rem]">
-            <SlCalender className="w-[2.4rem] h-[2.4rem]" />
+        <div className="inputGp flex items-center gap-4">
+          <div className=" bg-greyLight py-6 px-2 rounded-lg">
+            <SlCalender className="size-medium" />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="date" className="text-[2rem] font-bold">
+            <label htmlFor="date" className="text-xl font-bold">
               تاریخ رفت و برگشت
             </label>
             <input
@@ -132,19 +132,19 @@ function ParvazFormHome() {
               placeholder={
                 focusState.date ? " " : "تاریخ سفر خود را انتخاب کنید"
               }
-              className="text-[1.4rem] w-[22rem]"
+              className="text-sm w-[22rem]"
               onFocus={() => handleFocus("date")}
               onBlur={() => handleBlur("date")}
             />
           </div>
         </div>
 
-        <div className="inputGp flex items-center gap-[1rem]">
-          <div className=" bg-greyLight py-[1.5rem] px-[5px] rounded-[2.4rem]">
-            <IoMdPerson className="w-[2.4rem] h-[2.4rem]" />
+        <div className="inputGp flex items-center gap-4">
+          <div className=" bg-greyLight py-6 px-2 rounded-lg">
+            <IoMdPerson className="size-medium" />
           </div>
           <div className="flex flex-col">
-            <label htmlFor="passengerNumber" className="text-[2rem] font-bold">
+            <label htmlFor="passengerNumber" className="text-xl font-bold">
               تعداد مسافران
             </label>
             <input
@@ -162,7 +162,7 @@ function ParvazFormHome() {
                   ? " "
                   : "تعداد مسافران خود را انتخاب کنید"
               }
-              className="text-[1.4rem] w-[22rem]"
+              className="text-sm w-[22rem]"
               onFocus={() => handleFocus("passengerNumber")}
               onBlur={() => handleBlur("passengerNumber")}
             />
@@ -171,7 +171,7 @@ function ParvazFormHome() {
 
         <button
           type="submit"
-          className="bg-mainPrimary p-[1rem] text-[2.4rem] text-white rounded-[3.2rem] hover:bg-mainSecondary"
+          className="bg-mainPrimary p-4 text-2xl text-white rounded-xl hover:bg-mainSecondary"
         >
           <CiSearch />
         </button>

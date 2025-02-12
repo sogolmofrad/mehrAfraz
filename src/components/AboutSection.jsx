@@ -4,7 +4,7 @@ import TextBox from "./utils/TextBox";
 function AboutSection() {
   return (
     <section className="section">
-      <div className="rounded-[2.4rem] max-w-container mx-auto flex flex-col justify-between p-section bg-white gap-grid">
+      <div className="rounded-lg max-w-container mx-auto flex flex-col justify-between p-section bg-white gap-grid">
         <TextBox
           header="آژانس مسافرتی مهرپرواز مجری مستقیم تور آنتالیا و تورهای ترکیبی ترکیه"
           content="آیا می خواهید سفر متفاوتی داشته باشید؟ <br/>

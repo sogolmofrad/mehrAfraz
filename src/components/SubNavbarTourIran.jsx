@@ -2,14 +2,14 @@ import { Link } from "react-router";
 
 function SubNavbarTourIran() {
   return (
-    <div className="z-50 w-full bg-white  absolute top-[100%] right-0  p-[3rem] flex justify-between items-center rounded-b-[2.4rem] border-2 border-t-0">
-      <nav className="flex gap-[10rem] text-[1.4rem] text-grey navbar">
-        <div className="flex flex-col gap-[3rem]">
-          <ul className="flex flex-col gap-[1rem]">
+    <div className="z-50 w-full bg-white  absolute top-[100%] right-0  p-12 flex justify-between items-center rounded-b-lg border-2 border-t-0">
+      <nav className="flex gap-40 text-sm text-grey navbar">
+        <div className="flex flex-col gap-12">
+          <ul className="flex flex-col gap-4">
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-mainPrimary pr-[7px]"
+                className="text-black border-r-2 border-mainPrimary pr-3"
               >
                 تور استان آذربایجان شرقی
               </Link>
@@ -24,11 +24,11 @@ function SubNavbarTourIran() {
               <Link to="">تور تبریز </Link>
             </li>
           </ul>
-          <ul className="flex flex-col gap-[1rem] mt-[3rem] ">
+          <ul className="flex flex-col gap-4 mt-12 ">
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-mainPrimary pr-[7px]"
+                className="text-black border-r-2 border-mainPrimary pr-3"
               >
                 تور استان آذربایجان غربی
               </Link>
@@ -43,11 +43,11 @@ function SubNavbarTourIran() {
               <Link to="">تور تکاب </Link>
             </li>
           </ul>
-          <ul className="flex flex-col gap-[1rem] mt-[3rem] ">
+          <ul className="flex flex-col gap-4 mt-12 ">
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-mainPrimary pr-[7px]"
+                className="text-black border-r-2 border-mainPrimary pr-3"
               >
                 تور استان اردبیل
               </Link>
@@ -60,12 +60,12 @@ function SubNavbarTourIran() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col gap-[3rem]">
-          <ul className="flex flex-col gap-[1rem]">
+        <div className="flex flex-col gap-12">
+          <ul className="flex flex-col gap-4">
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-mainPrimary pr-[7px]"
+                className="text-black border-r-2 border-mainPrimary pr-3"
               >
                 تور استان آذربایجان شرقی
               </Link>
@@ -80,11 +80,11 @@ function SubNavbarTourIran() {
               <Link to="">تور تبریز </Link>
             </li>
           </ul>
-          <ul className="flex flex-col gap-[1rem] mt-[3rem] ">
+          <ul className="flex flex-col gap-4 mt-12 ">
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-mainPrimary pr-[7px]"
+                className="text-black border-r-2 border-mainPrimary pr-3"
               >
                 تور استان آذربایجان غربی
               </Link>
@@ -99,11 +99,11 @@ function SubNavbarTourIran() {
               <Link to="">تور تکاب </Link>
             </li>
           </ul>
-          <ul className="flex flex-col gap-[1rem] mt-[3rem] ">
+          <ul className="flex flex-col gap-4 mt-12 ">
             <li>
               <Link
                 to=""
-                className="text-black border-r-2 border-mainPrimary pr-[7px]"
+                className="text-black border-r-2 border-mainPrimary pr-3"
               >
                 تور استان اردبیل
               </Link>

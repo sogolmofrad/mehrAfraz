@@ -18,9 +18,9 @@ function AdvertiseWithVideoHome() {
 
   return (
     <section className="section  max-w-container mx-auto flex justify-between items-center mb-section">
-      <div className="sectionDescription w-[50%] flex flex-col gap-[2rem] justify-between items-start">
-        <h2 className="text-[3.2rem] font-bold">تجربه سفری به یاد ماندنی!</h2>
-        <p className="text-justify text-[1.8rem]/[3.6rem] font-light">
+      <div className="sectionDescription w-[50%] flex flex-col gap-8 justify-between items-start">
+        <h2 className="text-3xl font-bold">تجربه سفری به یاد ماندنی!</h2>
+        <p className="text-justify text-lg/[3.6rem] font-light">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
           استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
           ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
@@ -31,7 +31,7 @@ function AdvertiseWithVideoHome() {
       <div className="w-[40%] relative">
         <video
           ref={videoRef}
-          className="w-full rounded-[3.2rem]"
+          className="w-full rounded-xl"
           src="/videos/ad1-video.mp4"
           playsInline
           loop

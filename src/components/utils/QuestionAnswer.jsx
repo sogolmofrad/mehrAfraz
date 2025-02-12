@@ -8,17 +8,17 @@ function QuestionAnswer({ question, answer }) {
   }
   return (
     <>
-      <div className="w-full question flex justify-between px-[7.7rem] py-[1.6rem]">
-        <p className="text-[1.6rem] font-bold text-gray_10">{question}</p>
+      <div className="w-full question flex justify-between px-[7.7rem] py-6">
+        <p className="text-base font-bold text-gray_10">{question}</p>
         <button
-          className=" text-[2.4rem] font-bold text-gray_10 hover:text-mainPrimary"
+          className=" text-2xl font-bold text-gray_10 hover:text-mainPrimary"
           onClick={toggleAnswer}
         >
           {showAnswer ? <CiCircleMinus /> : <CiCirclePlus />}
         </button>
       </div>
       {showAnswer && (
-        <div className="answer px-[7.7rem] py-[1.6rem] text-[1.4rem] font-light">
+        <div className="answer px-[7.7rem] py-6 text-sm font-light">
           <p>{answer}</p>
         </div>
       )}

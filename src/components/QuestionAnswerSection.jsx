@@ -5,7 +5,7 @@ import QuestionAnswer from "./utils/QuestionAnswer";
 function QuestionAnswerSection() {
   return (
     <section className="section">
-      <div className="container max-w-container mx-auto bg-white px-section  rounded-[2.4rem]">
+      <div className="container max-w-container mx-auto bg-white px-section  rounded-lg">
         <SectionHeaders
           title="سوالات متداول"
           description="برخی از سوالات شما درباره ی مهرپرواز"

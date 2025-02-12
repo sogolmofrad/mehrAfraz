@@ -22,14 +22,6 @@ function SupportSectionHome() {
           heading="تضمین کیفیت سفر"
           paragraph="در هر ساعت از شبانه روز با ما تماس بگیرید"
         />
-
-        {/* <div className="flex flex-col items-center gap-[2rem]">
-          <IoCloudDoneOutline className="text-[4rem] text-red_5" />
-          <h3 className="text-[1.6rem] font-bold">ارائه تمای خدمات پرواز</h3>
-          <p className="text-[1.4rem] text-grey">
-            ارائه تمامی خدمات سفر (پرواز، قطار، اتوبوس، هتل و تور)
-          </p>
-        </div>  */}
       </div>
     </section>
   );

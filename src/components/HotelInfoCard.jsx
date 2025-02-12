@@ -11,16 +11,16 @@ function HotelInfoCard({ id, image, name, stars, location }) {
         <img
           src={image}
           alt="hotel"
-          className="w-full h-[29rem] object-cover rounded-[2.4rem]"
+          className="w-full h-[29rem] object-cover rounded-lg"
         />
       </div>
-      <h3 className="text-[1.6rem]">{name}</h3>
-      <div className="flex gap-[2rem]">
-        <p className="flex gap-[5px] text-[1.6rem] items-center">
+      <h3 className="text-base">{name}</h3>
+      <div className="flex gap-8">
+        <p className="flex gap-2 text-base items-center">
           <GoStarFill />
           <span>{stars} ستاره</span>
         </p>
-        <p className="flex gap-[5px] text-[1.6rem] items-center">
+        <p className="flex gap-2 text-base items-center">
           <IoLocationOutline />
           <span>{location}</span>
         </p>
