@@ -1,35 +1,57 @@
-import { FaArrowLeftLong } from "react-icons/fa6";
-
+import { Link } from "react-router";
+import { HiArrowLongLeft } from "react-icons/hi2";
 function TourCardHome({ tour }) {
   return (
-    <div className="bg-white p-small  rounded-xl">
-      <figure className="relative h-[23rem]">
-        <img
-          src={tour.image}
-          alt="tour Image"
-          className="w-full h-full rounded-lg"
-        />
-        <div className="absolute inset-0 bg-linear-black rounded-lg"></div>
-        <figcaption className="absolute bottom-8 right-6">
-          <h3 className="text-lg text-white">{tour.name}</h3>
-          <p className="text-sm text-white">{tour.company}</p>
-        </figcaption>
-      </figure>
-      <p className="text-base font-bold mt-8">
-        شروع قیمت از {tour.basicPrice} ریال
-      </p>
-      <div className="flex justify-between  mt-8">
-        <p className="text-base text-grey">
-          {tour.duration} شب و {tour.duration + 1} روز
-        </p>
-        <button className="text-mainPrimary  text-sm flex px-4 py-2 rounded-lg hover:bg-pinkExtraLight hover:text-mainSecondary active:border-2 active:border-pinkLight active:text-redPrimar active:bg-white">
-          <span>تاریخ های تور</span>
-          <span className="mr-4">
-            <FaArrowLeftLong />
-          </span>
-        </button>
+    <Link to={tour.url} className="tourCard">
+      <div className="relative  rounded-xl h-[30rem]">
+        <figure className=" h-full object-contain">
+          <img
+            src={tour.image}
+            alt="tour Image"
+            className="w-full h-full rounded-lg"
+          />
+          <div className="absolute inset-0 bg-linear-black rounded-lg"></div>
+        </figure>
+        <div className="h-full w-full absolute inset-0 bg-transparent p-base flex flex-col justify-end">
+          <div className="text-white flex text-lg font-bold justify-between mb-8 items-center">
+            <span>{tour.origin}</span>
+            <span className="relative">
+              <img src="/images/line.png" />
+              <figure className="centerhv w-fit bg-white rounded-full p-3">
+                <img
+                  src={tour.airline.image}
+                  alt="airline"
+                  className="w-[3rem] h-[3rem]"
+                />
+              </figure>
+            </span>
+            <span>{tour.arrival}</span>
+          </div>
+          <div className="bg-white p-xs rounded-lg h-fit ">
+            <p>
+              <span className="text-sm text-gray_10 font-medium">
+                {tour.date}
+              </span>
+              <span>-</span>
+              <span className="text-sx text-gray_6">
+                {tour.duration} شب و {tour.duration + 1} روز
+              </span>
+            </p>
+
+            <div className="flex justify-between items-center">
+              <p className="text-sm text-gray_10 ">
+                شروع از {tour.basicPrice} ریال
+              </p>
+              <button className="text-mainPrimary  text-xl flex p-4  rounded-xl hover:bg-mainPrimary hover:text-white  text-center">
+                <span className="text-center">
+                  <HiArrowLongLeft />
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

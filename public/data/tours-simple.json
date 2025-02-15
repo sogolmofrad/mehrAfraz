@@ -1,58 +1,106 @@
 [
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour1.png"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour2.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour3.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour4.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour5.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour6.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour7.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   },
   {
     "name": "تور کوش آداسی + ازمیر 25 آبان 1403 ",
-    "company": "شرکت هواپیمایی ماهان",
+    "origin":"تهران",
+    "arrival":"توکیو",
+    "airline":{
+    "name": "شرکت هواپیمایی ماهان",
+    "image":"/images/airline.png"
+    } ,
     "basicPrice": "149،100،000",
     "duration": 6,
-    "image": "/images/tour8.jpeg"
+    "image": "/images/tour1.png",
+    "date":"25 آبان 1404"
   }
 ]
