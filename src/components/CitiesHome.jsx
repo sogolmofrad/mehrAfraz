@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import DestinationTourCard from "./DestinationTourCard";
+import CityTourCard from "./CityTourCard";
 
-function DesinationToursHome({ containerRef }) {
+function CitiesHome({ containerRef }) {
   const [destinationTours, setDestinationTours] = useState([]);
   useEffect(function () {
     async function fetchTours() {
@@ -18,10 +18,10 @@ function DesinationToursHome({ containerRef }) {
   return (
     <div className="tourContainer container grid grid-cols-12 gap-grid  max-w-container">
       {destinationTours.map((tour, i) => (
-        <DestinationTourCard tour={tour} key={i} />
+        <CityTourCard tour={tour} key={i} />
       ))}
     </div>
   );
 }
 
-export default DesinationToursHome;
+export default CitiesHome;

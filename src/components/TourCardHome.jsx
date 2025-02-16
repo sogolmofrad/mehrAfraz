@@ -21,7 +21,7 @@ function TourCardHome({ tour }) {
                 <img
                   src={tour.airline.image}
                   alt="airline"
-                  className="w-[3rem] h-[3rem]"
+                  className="w-[2.5rem] h-[2.5rem]"
                 />
               </figure>
             </span>

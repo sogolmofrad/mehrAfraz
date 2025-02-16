@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function SubNavbarTourIran() {
   return (
-    <div className="z-50 w-full bg-white  absolute top-[100%] right-0  p-12 flex justify-between items-center rounded-b-lg border-2 border-t-0">
+    <div className="z-50 w-[1200px] bg-white  absolute top-[100%]  p-12 flex justify-between items-center rounded-b-lg border-2 border-t-0">
       <nav className="flex gap-40 text-sm text-grey navbar">
         <div className="flex flex-col gap-12">
           <ul className="flex flex-col gap-4">

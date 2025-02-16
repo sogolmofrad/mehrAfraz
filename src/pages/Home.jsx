@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import AdvertiseWithVideoHome from "../components/AdvertiseWithVideoHome";
 import AdvertSectionHome from "../components/AdvertSectionHome";
 import BestToursHomeSection from "../components/BestToursHomeSection";
-import DestinationsSectionHome from "../components/DestinationsSectionHome";
+import DestinationsSectionHome from "../components/CitiesSectionHome";
 import Header from "../components/layout/Header";
 import HomeSliderSection from "../components/HomeSliderSection";
 import SpecialHotelsSectionHome from "../components/SpecialHotelsSectionHome";
@@ -40,13 +40,15 @@ function Home() {
       <AdvertSectionHome />
       <DestinationsSectionHome />
       <AdvertiseWithVideoHome />
-      {hotels &&
+      {/* {hotels &&
         hotels.map((hotel, i) => (
           <SpecialHotelsSectionHome hotel={hotel} key={i} />
-        ))}
+        ))} */}
       <MembershipSectionHome />
       <MagazineSectionHome />
+
       <AboutSection />
+
       <QuestionAnswerSection />
     </div>
   );

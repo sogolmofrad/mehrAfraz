@@ -27,12 +27,12 @@ export default {
         pinkExtraLight: "#FFF6F6",
         redSemiTransparent: "rgba(25, 5, 5, 0.49)",
         linkBlue: "#0D68F0",
-        greyTransparent: "rgba(25, 5, 5, 0.6)",
+        greyTransparent: "rgba(25, 5, 5, 0.49)",
         blackTransparent: "rgba(0,0,0,0.5)",
       },
       backgroundImage: {
         "linear-black":
-          "linear-gradient(to right bottom, rgba(0,0,0,0), rgba(0,0,0,0.9))",
+          "linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0))",
         "linear-red":
           "linear-gradient(to right bottom, rgba(255, 0, 0, 0.47), rgba(0,0,0,0.47))",
       },
@@ -74,10 +74,13 @@ export default {
       },
 
       borderRadius: {
-        lg: "2.4rem",
-        xl: "3.2rem",
+        lg: "24px",
+        xl: "32px",
         "2xl": "4rem",
       },
+      boxShadow:{
+        "normal":"0px 0px 30px 0px rgba(0, 34, 66, 0.35)",
+      }
     },
   },
   plugins: [],

@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-import DesinationToursHome from "./DesinationToursHome";
+import CitiesHome from "./CitiesHome";
 import SectionHeaders from "./utils/SectionHeaders";
 import { FaArrowRightLong, FaArrowLeft } from "react-icons/fa6";
 import { Link } from "react-router";
 import ViewAllLink from "./utils/ViewAllLink";
 
-function DestinationsSectionHome() {
+function CitiesSectionHome() {
   return (
     <section className="tourHome section   max-w-container mx-auto">
       <SectionHeaders
@@ -14,9 +14,9 @@ function DestinationsSectionHome() {
       >
         <ViewAllLink />
       </SectionHeaders>
-      <DesinationToursHome />
+      <CitiesHome />
     </section>
   );
 }
 
-export default DestinationsSectionHome;
+export default CitiesSectionHome;
