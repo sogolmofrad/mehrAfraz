@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ParvazReserveHomeFilter from "./ParvazReserveHomeFilter";
+
 import ParvazFormHome from "./ParvazFormHome";
 import HotelFromHome from "./HotelFormHome";
 import TourFormHome from "./TourFormHome";
@@ -22,7 +22,7 @@ function ReserveHomeBox() {
           }`}
           onClick={() => handleBtnClick(1)}
         >
-          بلیط پرواز
+          پرواز یک طرفه
         </button>
         <button
           className={`${
@@ -32,7 +32,7 @@ function ReserveHomeBox() {
           }`}
           onClick={() => handleBtnClick(2)}
         >
-          رزرو هتل
+          پرواز دوطرفه
         </button>
         <button
           className={`${
@@ -42,10 +42,20 @@ function ReserveHomeBox() {
           }`}
           onClick={() => handleBtnClick(3)}
         >
+          رزرو هتل
+        </button>
+        <button
+          className={`${
+            activeBtn === 4
+              ? "reserveGpBtn bg-mainPrimary text-white"
+              : "reserveGpBtn"
+          }`}
+          onClick={() => handleBtnClick(4)}
+        >
           رزرو تور
         </button>
       </div>
-      {activeBtn === 1 && <ParvazReserveHomeFilter />}
+
       {activeBtn === 1 && <ParvazFormHome />}
       {activeBtn === 2 && <HotelFromHome />}
       {activeBtn === 3 && <TourFormHome />}

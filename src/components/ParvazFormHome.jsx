@@ -1,11 +1,12 @@
 import { useReducer, useState } from "react";
 import { MdFlight } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
-import { IoMdPerson } from "react-icons/io";
+import { CiLocationOn } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
+import { RiFlightTakeoffFill } from "react-icons/ri";
 const initialState = {
   origin: "",
-  destination: "",
+  arrival: "",
   departureTime: null,
   arrivalTime: null,
   passengerNumber: null,
@@ -15,8 +16,8 @@ function reducer(state, action) {
   switch (action.type) {
     case "setOrigin":
       return { ...state, origin: action.payload };
-    case "setDestination":
-      return { ...state, destination: action.payload };
+    case "setArrival":
+      return { ...state, arrival: action.payload };
     case "setdepartureTime":
       return { ...state, departureTime: action.payload };
     case "setArrivalTime":
@@ -29,23 +30,15 @@ function reducer(state, action) {
 }
 function ParvazFormHome() {
   const [
-    { origin, destination, departureTime, arrivalTime, passengerNumber },
+    { origin, arrival, departureTime, arrivalTime, passengerNumber },
     dispatch,
   ] = useReducer(reducer, initialState);
-  const [focusState, setFocusState] = useState({
-    from: false,
-    to: false,
-    date: false,
-    passengerNumber: false,
-  });
-
-  
-  const handleFocus = (inputName) => {
-    setFocusState((prevState) => ({
-      ...prevState,
-      [inputName]: true,
-    }));
-  };
+  // const [focusState, setFocusState] = useState({
+  //   from: false,
+  //   to: false,
+  //   date: false,
+  //   passengerNumber: false,
+  // });
 
   const handleBlur = (inputName) => {
     setFocusState((prevState) => ({
@@ -59,7 +52,7 @@ function ParvazFormHome() {
     e.preventDefault();
     const formData = {
       origin,
-      destination,
+      arrival,
       departureTime,
       arrivalTime,
       passengerNumber,
@@ -68,104 +61,58 @@ function ParvazFormHome() {
   }
 
   return (
-    <div className="mt-8">
-      <form className="form flex" onSubmit={handleSubmit}>
-        <div className="inputGp flex items-center gap-4">
-          <div className=" bg-greyLight py-6 px-2 rounded-lg">
-            <MdFlight className="size-medium" />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="from" className="text-xl font-bold">
-              مبدا
-            </label>
+    <div className="mt-8 w-full">
+      <form
+        className="form flex justify-between w-full"
+        onSubmit={handleSubmit}
+      >
+        <div className="inputGp flex items-center justify-between gap-4">
+          <div className="flex items-center w-[188px] p-3 border-1 rounded-xl">
+            <div className=" bg-gray_1 p-3 rounded-lg">
+              <RiFlightTakeoffFill className="size-medium" />
+            </div>
             <input
-              name="from"
               type="text"
               value={origin}
               onChange={(e) =>
                 dispatch({ type: "setOrigin", payload: e.target.value })
               }
-              placeholder={focusState.from ? " " : "مبدا خود را انتخاب کنید"}
-              className="text-sm w-[22rem]"
-              onFocus={() => handleFocus("from")}
+              placeholder="مبدا"
+              className="text-sm w-[80%] mr-base"
+              autoComplete="off"
               onBlur={() => handleBlur("from")}
             />
           </div>
-        </div>
-
-        <div className="inputGp flex items-center gap-4">
-          <div className=" bg-greyLight py-6 px-2 rounded-lg">
-            <MdFlight className="size-medium" />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="to" className="text-xl font-bold">
-              مقصد
-            </label>
+          <div className="flex items-center w-[188px] p-3 border-1 rounded-xl">
+            <div className=" bg-gray_1 p-3 rounded-lg">
+              <CiLocationOn className="size-medium" />
+            </div>
             <input
-              name="to"
               type="text"
-              value={destination}
+              value={arrival}
               onChange={(e) =>
-                dispatch({
-                  type: "setDestination",
-                  payload: e.target.value,
-                })
+                dispatch({ type: "setArrival", payload: e.target.value })
               }
-              placeholder={focusState.to ? " " : "مقصد خود را انتخاب کنید"}
-              className="text-sm w-[22rem]"
-              onFocus={() => handleFocus("to")}
-              onBlur={() => handleBlur("to")}
+              placeholder="مقصد"
+              className="text-sm w-[80%] mr-base"
+              autoComplete="off"
+              onBlur={() => handleBlur("from")}
             />
           </div>
-        </div>
-
-        <div className="inputGp flex items-center gap-4">
-          <div className=" bg-greyLight py-6 px-2 rounded-lg">
-            <SlCalender className="size-medium" />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="date" className="text-xl font-bold">
-              تاریخ رفت و برگشت
-            </label>
+          <div className="flex items-center w-[188px] p-3 border-1 rounded-xl">
+            <div className=" bg-gray_1 p-3 rounded-lg">
+              <SlCalender className="size-medium" />
+            </div>
             <input
-              name="date"
               type="text"
-              placeholder={
-                focusState.date ? " " : "تاریخ سفر خود را انتخاب کنید"
-              }
-              className="text-sm w-[22rem]"
-              onFocus={() => handleFocus("date")}
-              onBlur={() => handleBlur("date")}
-            />
-          </div>
-        </div>
-
-        <div className="inputGp flex items-center gap-4">
-          <div className=" bg-greyLight py-6 px-2 rounded-lg">
-            <IoMdPerson className="size-medium" />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="passengerNumber" className="text-xl font-bold">
-              تعداد مسافران
-            </label>
-            <input
-              name="passengerNumber"
-              type="text"
-              value={passengerNumber}
+              value={arrival}
               onChange={(e) =>
-                dispatch({
-                  type: "setPassengerNumber",
-                  payload: e.target.value,
-                })
+                dispatch({ type: "setArrival", payload: e.target.value })
               }
-              placeholder={
-                focusState.passengerNumber
-                  ? " "
-                  : "تعداد مسافران خود را انتخاب کنید"
-              }
-              className="text-sm w-[22rem]"
-              onFocus={() => handleFocus("passengerNumber")}
-              onBlur={() => handleBlur("passengerNumber")}
+              placeholder="مقصد"
+              className="text-sm w-[80%] mr-base"
+              autoComplete="off"
+              onBlur={() => handleBlur("from")}
             />
           </div>
         </div>

@@ -6,7 +6,8 @@ export default {
       colors: {
         mainPrimary: "#3b4d5c",
         mainSecondary: "#C4CACE",
-        gray_1: "#F2F2F2",
+      
+        gray_1: "#F6F6F6",
         gray_2: "#e6e6e6",
         gray_3: "#cecece",
         gray_4: "#b6b6b6",
@@ -72,7 +73,9 @@ export default {
       gap: {
         grid: "2.4rem",
       },
-
+      borderWidth:{
+        "1":"1px",
+      },
       borderRadius: {
         lg: "24px",
         xl: "32px",
