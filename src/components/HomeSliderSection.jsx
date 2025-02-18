@@ -10,7 +10,8 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
-import ReserveHomeBox from "./ReserveHomeBox";
+
+import SearchBoxHome from "./SearchBoxHome";
 
 function HomeSliderSection() {
   return (
@@ -82,7 +83,7 @@ function HomeSliderSection() {
           </div>
         </div>
       </div>
-      <ReserveHomeBox />
+      <SearchBoxHome />
     </div>
   );
 }

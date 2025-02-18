@@ -1,14 +1,17 @@
-import { useReducer, useState } from "react";
-import { MdFlight } from "react-icons/md";
-import { SlCalender } from "react-icons/sl";
-import { CiLocationOn } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
+import { useReducer } from "react";
+import DatePicker from "react-multi-date-picker";
+import persian from "react-date-object/calendars/persian";
+import persian_fa from "react-date-object/locales/persian_fa";
 import { RiFlightTakeoffFill } from "react-icons/ri";
+import { TbArrowsExchange2 } from "react-icons/tb";
+import { CiLocationOn, CiSearch } from "react-icons/ci";
+import { PiCalendarDotsDuotone } from "react-icons/pi";
+import "react-multi-date-picker/styles/colors/teal.css";
 const initialState = {
   origin: "",
   arrival: "",
   departureTime: null,
-  arrivalTime: null,
+  arrivalDate: null,
   passengerNumber: null,
 };
 
@@ -18,45 +21,28 @@ function reducer(state, action) {
       return { ...state, origin: action.payload };
     case "setArrival":
       return { ...state, arrival: action.payload };
-    case "setdepartureTime":
+    case "setDepartureTime":
       return { ...state, departureTime: action.payload };
-    case "setArrivalTime":
-      return { ...state, arrivalTime: action.payload };
+    case "setArrivalDate":
+      return { ...state, arrivalDate: action.payload };
     case "setPassengerNumber":
       return { ...state, passengerNumber: action.payload };
     default:
-      return { ...state };
+      return state;
   }
 }
+
 function ParvazFormHome() {
-  const [
-    { origin, arrival, departureTime, arrivalTime, passengerNumber },
-    dispatch,
-  ] = useReducer(reducer, initialState);
-  // const [focusState, setFocusState] = useState({
-  //   from: false,
-  //   to: false,
-  //   date: false,
-  //   passengerNumber: false,
-  // });
+  const [{ origin, arrival, arrivalDate }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
-  const handleBlur = (inputName) => {
-    setFocusState((prevState) => ({
-      ...prevState,
-      [inputName]: false,
-    }));
-  };
+  const weekDays = ["ی", "د", "س", "چ", "پ", "ج", "ش"];
 
-  //handle form submit
   function handleSubmit(e) {
     e.preventDefault();
-    const formData = {
-      origin,
-      arrival,
-      departureTime,
-      arrivalTime,
-      passengerNumber,
-    };
+    const formData = { origin, arrival, arrivalDate };
     console.log(formData);
   }
 
@@ -67,8 +53,9 @@ function ParvazFormHome() {
         onSubmit={handleSubmit}
       >
         <div className="inputGp flex items-center justify-between gap-4">
-          <div className="flex items-center w-[188px] p-3 border-1 rounded-xl">
-            <div className=" bg-gray_1 p-3 rounded-lg">
+          {/* Origin Input */}
+          <div className="flex items-center w-[190px] p-3 border border-gray-300 rounded-xl">
+            <div className="bg-gray-100 p-3 rounded-lg">
               <RiFlightTakeoffFill className="size-medium" />
             </div>
             <input
@@ -78,13 +65,19 @@ function ParvazFormHome() {
                 dispatch({ type: "setOrigin", payload: e.target.value })
               }
               placeholder="مبدا"
-              className="text-sm w-[80%] mr-base"
+              className="text-sm w-[80%] mr-3 py-2"
               autoComplete="off"
-              onBlur={() => handleBlur("from")}
             />
           </div>
-          <div className="flex items-center w-[188px] p-3 border-1 rounded-xl">
-            <div className=" bg-gray_1 p-3 rounded-lg">
+
+          {/* Swap Button */}
+          <button type="button">
+            <TbArrowsExchange2 className="size-medium" />
+          </button>
+
+          {/* Arrival Input */}
+          <div className="flex items-center w-[190px] p-3 border border-gray-300 rounded-xl">
+            <div className="bg-gray-100 p-3 rounded-lg">
               <CiLocationOn className="size-medium" />
             </div>
             <input
@@ -94,29 +87,64 @@ function ParvazFormHome() {
                 dispatch({ type: "setArrival", payload: e.target.value })
               }
               placeholder="مقصد"
-              className="text-sm w-[80%] mr-base"
+              className="text-sm w-[80%]  mr-3 py-2"
               autoComplete="off"
-              onBlur={() => handleBlur("from")}
             />
           </div>
-          <div className="flex items-center w-[188px] p-3 border-1 rounded-xl">
-            <div className=" bg-gray_1 p-3 rounded-lg">
-              <SlCalender className="size-medium" />
+
+          {/* Date Picker */}
+          <div className="flex items-center w-[290px] p-3 border border-gray-300 rounded-xl">
+            <div className="bg-gray-100 p-3 rounded-lg">
+              <PiCalendarDotsDuotone className="size-medium" />
             </div>
-            <input
-              type="text"
-              value={arrival}
-              onChange={(e) =>
-                dispatch({ type: "setArrival", payload: e.target.value })
-              }
-              placeholder="مقصد"
-              className="text-sm w-[80%] mr-base"
-              autoComplete="off"
-              onBlur={() => handleBlur("from")}
-            />
+            <div className="flex justify-between w-[90%]">
+              <DatePicker
+                mapDays={({
+                  date,
+                  today,
+                  selectedDate,
+                  currentMonth,
+                  isSameDate,
+                }) => {
+                  let props = {};
+
+                  props.style = {
+                    color: "#262626",
+                  };
+
+                  if (isSameDate(date, today)) props.style.color = "green";
+                  if (isSameDate(date, selectedDate))
+                    props.style = {
+                      ...props.style,
+                      color: "white",
+                      backgroundColor: "#3B4D5C",
+                      fontWeight: "bold",
+                    };
+
+                  return props;
+                }}
+                weekDays={weekDays}
+                selected={arrivalDate}
+                onChange={(date) =>
+                  dispatch({ type: "setArrivalDate", payload: date })
+                }
+                calendar={persian}
+                locale={persian_fa}
+                render={<DateInput />}
+                calendarClassName="w-[290px] bg-white border border-gray-200 shadow-lg rounded-lg"
+                className="teal"
+              />
+              <input
+                type="text"
+                className="text-sm py-2 w-[50%]"
+                autoComplete="off"
+                placeholder="تاریخ های قبل و بعد"
+              />
+            </div>
           </div>
         </div>
 
+        {/* Search Button */}
         <button
           type="submit"
           className="bg-mainPrimary p-4 text-2xl text-white rounded-xl hover:bg-mainSecondary"
@@ -127,5 +155,17 @@ function ParvazFormHome() {
     </div>
   );
 }
+
+// Custom Input Component for DatePicker
+const DateInput = ({ onFocus, value, onChange }) => (
+  <input
+    onFocus={onFocus}
+    value={value}
+    onChange={onChange}
+    type="text"
+    placeholder="تاریخ رفت "
+    className="text-sm py-2 mr-3 border-l-1 w-[90%] border-gray-300"
+  />
+);
 
 export default ParvazFormHome;

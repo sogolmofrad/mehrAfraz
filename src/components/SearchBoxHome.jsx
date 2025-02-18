@@ -4,7 +4,7 @@ import ParvazFormHome from "./ParvazFormHome";
 import HotelFromHome from "./HotelFormHome";
 import TourFormHome from "./TourFormHome";
 
-function ReserveHomeBox() {
+function SearchBoxHome() {
   const [activeBtn, setActiveBtn] = useState(1);
 
   function handleBtnClick(btnId) {
@@ -12,8 +12,8 @@ function ReserveHomeBox() {
   }
 
   return (
-    <div className="flex flex-col -mt-24 z-10 bg-white rounded-lg py-medium px-base mx-auto items-start max-w-[1150px]">
-      <div className="reserveButtonGp flex self-center bg-greyLight py-4 px-8 rounded-[8rem]">
+    <div className="flex flex-col -mt-24 z-10 bg-white rounded-lg py-medium px-base mx-auto items-start max-w-[1150px] w-full">
+      <div className="reserveButtonGp flex self-center bg-gray_1 py-4 px-8 rounded-[8rem]">
         <button
           className={`${
             activeBtn === 1
@@ -63,4 +63,4 @@ function ReserveHomeBox() {
   );
 }
 
-export default ReserveHomeBox;
+export default SearchBoxHome;

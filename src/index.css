@@ -90,7 +90,7 @@
 	--space-small:1.4rem;
 	--space-base:1.6rem;
 	--space-medium: 2.4rem;
-
+	--color-primary:"#3b4d5c";
   }
   
 html{
@@ -121,6 +121,9 @@ body {
 	height: auto !important;
   }
   
+  .rmdp-day.rmdp-today .sd{
+	color:var(--color-primary) !important;
+  }
 
 
 a{
