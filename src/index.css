@@ -172,7 +172,9 @@ padding-bottom: 4rem;
 }
 
 
-
+.rmdp-container{
+	width: 110px;
+}
 
 
 .bestTourCaption{
@@ -201,6 +203,25 @@ padding-bottom: 4rem;
 	color:#0D68F0;  /*linkBlue color*/
 }
 
+/* react select dropdown */
+.react-dropdown-select{
+	width: 150px !important;
+}
+.react-dropdown-select , .react-dropdown-select-input{
+	
+	font-size: var(--space-small) !important;
+	border:none !important;
+	outline: none;	
+}
+.react-dropdown-select-dropdown-handle{
+	display: none;
+}
+.react-dropdown-select-dropdown{
+	width: 150px !important;
+}
+.css-eshs9p-ReactDropdownSelect:focus, .css-eshs9p-ReactDropdownSelect:focus-within{
+	box-shadow: none !important;
+}
 /* reponsiveness */
 
 @media (max-width:900px) {
