@@ -11,7 +11,7 @@ function ToursHome() {
     }
     fetchTours();
   }, []);
-  console.log(tours);
+
   return (
     <div className="container mx-auto max-w-container">
       <div className="grid grid-cols-12 gap-grid">

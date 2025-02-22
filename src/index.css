@@ -217,10 +217,28 @@ padding-bottom: 4rem;
 	display: none;
 }
 .react-dropdown-select-dropdown{
-	width: 150px !important;
+	width: 200px !important;
+	/* gap:2rem !important; */
+	border-radius: 2.4rem !important;
+	
+}
+.css-1nfsgj8-ItemComponent{
+	padding:1rem 3rem  !important;
+}
+.css-1nfsgj8-ItemComponent:hover, .css-1nfsgj8-ItemComponent:focus{
+	background-color: #f6f6f6 !important;
+	
+}
+
+.react-dropdown-select-item-selected{
+	background-color: #3b4d5c !important;
 }
 .css-eshs9p-ReactDropdownSelect:focus, .css-eshs9p-ReactDropdownSelect:focus-within{
 	box-shadow: none !important;
+}
+
+.react-dropdown-select-input{
+	width: fit-content !important;
 }
 /* reponsiveness */
 

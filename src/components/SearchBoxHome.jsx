@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import ParvazFormHome from "./ParvazFormHome";
-import HotelFromHome from "./HotelFormHome";
 import TourFormHome from "./TourFormHome";
+import HotelSearchFormHome from "./HotelSearchFormHome";
 
 function SearchBoxHome() {
   const [activeBtn, setActiveBtn] = useState(1);
@@ -56,9 +56,10 @@ function SearchBoxHome() {
         </button>
       </div>
 
-      {activeBtn === 1 && <ParvazFormHome />}
-      {activeBtn === 2 && <HotelFromHome />}
-      {activeBtn === 3 && <TourFormHome />}
+      {activeBtn === 1 && <ParvazFormHome oneWay={true} />}
+      {activeBtn === 2 && <ParvazFormHome oneWay={false} />}
+      {activeBtn === 3 && <HotelSearchFormHome />}
+      {activeBtn === 4 && <TourFormHome />}
     </div>
   );
 }

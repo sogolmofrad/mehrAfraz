@@ -1,5 +1,6 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import DatePicker from "react-multi-date-picker";
+import DateObject from "react-date-object";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { RiFlightTakeoffFill } from "react-icons/ri";
@@ -12,10 +13,10 @@ import Select from "react-dropdown-select";
 const initialState = {
   origin: null,
   arrival: null,
-  departureTime: null,
+  departureDate: null,
   arrivalDate: null,
   afterBefore: null,
-  passengerNumber: null,
+  passengers: { adults: 1, children: 0, infants: 0 },
 };
 
 function reducer(state, action) {
@@ -24,26 +25,51 @@ function reducer(state, action) {
       return { ...state, origin: action.payload };
     case "setArrival":
       return { ...state, arrival: action.payload };
-    case "setDepartureTime":
-      return { ...state, departureTime: action.payload };
+    case "setDepartureDate":
+      return { ...state, departureDate: action.payload };
     case "setArrivalDate":
       return { ...state, arrivalDate: action.payload };
     case "setAfterBefore":
       return { ...state, afterBefore: action.payload };
-    case "setPassengerNumber":
-      return { ...state, passengerNumber: action.payload };
+    case "setAdults":
+      return {
+        ...state,
+        passengers: {
+          ...state.passengers,
+          adults: state.passengers.adults + action.payload,
+        },
+      };
+    case "setChildren":
+      return {
+        ...state,
+        passengers: {
+          ...state.passengers,
+          children: state.passengers.children + action.payload,
+        },
+      };
+    case "setInfants":
+      return {
+        ...state,
+        passengers: {
+          ...state.passengers,
+          infants: state.passengers.infants + action.payload,
+        },
+      };
     default:
       return state;
   }
 }
 
-function ParvazFormHome() {
-  const [{ origin, arrival, arrivalDate, afterBefore }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+function ParvazFormHome({ oneWay }) {
+  const [
+    { origin, arrival, arrivalDate, afterBefore, departureDate, passengers },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   const [isJalali, setIsJalali] = useState(true);
+
+  const [showPassengerSearch, setShowpassengerSearch] = useState(false);
+  const passengerButtonRef = useRef(null);
 
   const weekDaysFarsi = ["ی", "د", "س", "چ", "پ", "ج", "ش"];
   const weekDaysEnglish = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -71,13 +97,45 @@ function ParvazFormHome() {
   ];
   function handleSubmit(e) {
     e.preventDefault();
-    const formData = { origin, arrival, arrivalDate, afterBefore };
+    const formData = {
+      origin,
+      arrival,
+      departureDate,
+      arrivalDate,
+      afterBefore,
+      passengers,
+    };
     console.log(formData);
   }
 
   function handleJalali() {
     setIsJalali(!isJalali);
   }
+
+  function handleSetDates(dates) {
+    if (dates && dates.length === 2) {
+      dispatch({
+        type: "setDepartureDate",
+        payload: dates[0].toLocaleString(),
+      });
+      dispatch({ type: "setArrivalDate", payload: dates[1].toLocaleString() });
+    }
+  }
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        passengerButtonRef.current &&
+        !passengerButtonRef.current.contains(event.target)
+      ) {
+        setShowpassengerSearch(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="mt-8 w-full">
@@ -88,7 +146,7 @@ function ParvazFormHome() {
         <div className="inputGp flex items-center justify-between gap-4">
           {/* Origin Input */}
 
-          <div className="flex items-center w-[190px] p-3 border border-gray-300 rounded-xl">
+          <div className="flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
             <div className="bg-gray-100 p-3 rounded-lg">
               <RiFlightTakeoffFill className="size-medium" />
             </div>
@@ -109,7 +167,7 @@ function ParvazFormHome() {
           </button>
 
           {/* Arrival Input */}
-          <div className="flex items-center w-[190px] p-3 border border-gray-300 rounded-xl">
+          <div className="flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
             <div className="bg-gray-100 p-3 rounded-lg">
               <CiLocationOn className="size-medium" />
             </div>
@@ -125,94 +183,265 @@ function ParvazFormHome() {
           </div>
 
           {/* Date Picker */}
-          <div className="flex items-center w-[290px] p-3 border border-gray-300 rounded-xl">
-            <div className="bg-gray-100 p-3 rounded-lg">
-              <PiCalendarDotsDuotone className="size-medium" />
-            </div>
-            <div className="flex justify-between items-center w-full">
-              <div>
-                <DatePicker
-                  numberOfMonths={2}
-                  monthYearSeparator="|"
-                  mapDays={({
-                    date,
-                    today,
-                    selectedDate,
-                    currentMonth,
-                    isSameDate,
-                  }) => {
-                    let props = {};
+          {oneWay && (
+            <div className="flex items-center w-[290px] p-3 border border-gray-300 rounded-xl">
+              <div className="bg-gray-100 p-3 rounded-lg">
+                <PiCalendarDotsDuotone className="size-medium" />
+              </div>
+              <div className="flex justify-between items-center w-full">
+                <div>
+                  <DatePicker
+                    numberOfMonths={2}
+                    monthYearSeparator="|"
+                    mapDays={({
+                      date,
+                      today,
+                      selectedDate,
+                      currentMonth,
+                      isSameDate,
+                    }) => {
+                      let props = {};
 
-                    props.style = {
-                      color: "#262626",
-                    };
-
-                    if (isSameDate(date, today)) props.style.color = "green";
-                    if (isSameDate(date, selectedDate))
                       props.style = {
-                        ...props.style,
-                        color: "white",
-                        backgroundColor: "#3B4D5C",
-                        fontWeight: "bold",
+                        color: "#262626",
                       };
 
-                    return props;
-                  }}
-                  weekDays={isJalali ? weekDaysFarsi : weekDaysEnglish}
-                  calendar={isJalali ? persian : ""}
-                  locale={isJalali ? persian_fa : ""}
-                  onChange={(date) =>
-                    dispatch({
-                      type: "setArrivalDate",
-                      payload: date.toLocaleString(),
-                    })
+                      if (isSameDate(date, today)) props.style.color = "green";
+                      if (isSameDate(date, selectedDate))
+                        props.style = {
+                          ...props.style,
+                          color: "white",
+                          backgroundColor: "#3B4D5C",
+                          fontWeight: "bold",
+                        };
+
+                      return props;
+                    }}
+                    weekDays={isJalali ? weekDaysFarsi : weekDaysEnglish}
+                    calendar={isJalali ? persian : ""}
+                    locale={isJalali ? persian_fa : ""}
+                    onChange={(date) =>
+                      dispatch({
+                        type: "setArrivalDate",
+                        payload: date.toLocaleString(),
+                      })
+                    }
+                    format="YYYY/MM/DD"
+                    value={arrivalDate}
+                    render={<DateInput value={arrivalDate} oneWay={oneWay} />}
+                    calendarClassName="w-[290px] bg-white border border-gray-200 shadow-lg rounded-lg"
+                    className="teal"
+                  >
+                    <div className="w-full flex p-base justify-between border-t-2">
+                      <button
+                        className=" text-mainPrimary text-sm hover:text-gray_5"
+                        onClick={handleJalali}
+                      >
+                        تقویم میلادی
+                      </button>
+                    </div>
+                  </DatePicker>
+                </div>
+                <Select
+                  options={afterBefores}
+                  labelField="name"
+                  valueField="value"
+                  placeholder="فقط همین تاریخ"
+                  onChange={(e) =>
+                    dispatch({ type: "setAfterBefore", payload: e[0].value })
                   }
-                  format="YYYY/MM/DD"
-                  value={arrivalDate}
-                  render={<DateInput value={arrivalDate} />}
-                  calendarClassName="w-[290px] bg-white border border-gray-200 shadow-lg rounded-lg"
-                  className="teal"
-                >
-                  <div className="w-full flex p-base justify-between border-t-2">
+                  direction="rtl"
+                  className="focus:shadow-none text-sm w-[150px] "
+                />
+                <input
+                  type="text"
+                  className="text-sm py-2 w-[50%]"
+                  autoComplete="off"
+                />
+              </div>
+            </div>
+          )}
+          {!oneWay && (
+            <div className="flex items-center w-[290px] p-3 border border-gray-300 rounded-xl">
+              <div className="bg-gray-100 p-3 rounded-lg">
+                <PiCalendarDotsDuotone className="size-medium" />
+              </div>
+              <div className="flex justify-between items-center w-full">
+                <div>
+                  <DatePicker
+                    numberOfMonths={2}
+                    monthYearSeparator="|"
+                    mapDays={({
+                      date,
+                      today,
+                      selectedDate,
+                      currentMonth,
+                      isSameDate,
+                    }) => {
+                      let props = {};
+
+                      props.style = {
+                        color: "#262626",
+                      };
+
+                      if (isSameDate(date, today)) props.style.color = "green";
+                      if (isSameDate(date, selectedDate))
+                        props.style = {
+                          ...props.style,
+                          color: "white",
+                          backgroundColor: "#3B4D5C",
+                          fontWeight: "bold",
+                        };
+
+                      return props;
+                    }}
+                    weekDays={isJalali ? weekDaysFarsi : weekDaysEnglish}
+                    calendar={isJalali ? persian : ""}
+                    locale={isJalali ? persian_fa : ""}
+                    onChange={(dates) => handleSetDates(dates)}
+                    format="YYYY/MM/DD"
+                    values={
+                      departureDate && arrivalDate
+                        ? [
+                            new DateObject(departureDate),
+                            new DateObject(arrivalDate),
+                          ]
+                        : []
+                    }
+                    render={<DateInput value={arrivalDate} oneWay={oneWay} />}
+                    calendarClassName="w-[290px] bg-white border border-gray-200 shadow-lg rounded-lg"
+                    className="teal"
+                    range
+                  >
+                    <div className="w-full flex p-base justify-between border-t-2">
+                      <button
+                        className=" text-mainPrimary text-sm hover:text-gray_5"
+                        onClick={handleJalali}
+                      >
+                        تقویم میلادی
+                      </button>
+                    </div>
+                  </DatePicker>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div className="relative" ref={passengerButtonRef}>
+            <div className="flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
+              <div
+                role="button"
+                className="p-3"
+                onClick={() => setShowpassengerSearch(!showPassengerSearch)}
+              >
+                <label className="text-sm">
+                  {passengers.adults + passengers.children + passengers.infants}{" "}
+                  مسافر
+                </label>
+              </div>
+            </div>
+            {showPassengerSearch && (
+              <div className="absolute inset-0 p-medium bg-white h-fit top-[55px]  rounded-xl flex flex-col gap-8 w-[300px] rounded-b-lg shadow-lg">
+                <div className="flex justify-between w-full">
+                  <p className="text-sm flex flex-col font-medium">
+                    <span>بزرگسال</span>
+                    <span className="text-xs">بالای 12 سال</span>
+                  </p>
+                  <div className="flex justify-between items-center gap-4">
                     <button
-                      className=" text-mainPrimary text-sm hover:text-gray_5"
-                      onClick={handleJalali}
+                      className="text-lg text-mainPrimary flex items-center justify-center w-[40px] h-[40px] rounded-full border-1 border-mainPrimary"
+                      onClick={() =>
+                        dispatch({ type: "setAdults", payload: 1 })
+                      }
                     >
-                      تقویم میلادی
+                      +
+                    </button>
+                    <span className="text-lg">{passengers.adults}</span>
+                    <button
+                      disabled={passengers.adults == 1}
+                      className={`text-lg text-mainPrimary flex items-center justify-center w-[40px] h-[40px] rounded-full border-1 border-mainPrimary ${
+                        passengers.adults == 1
+                          ? "text-gray_4 border-gray_4"
+                          : ""
+                      }`}
+                      onClick={() =>
+                        dispatch({ type: "setAdults", payload: -1 })
+                      }
+                    >
+                      -
                     </button>
                   </div>
-                </DatePicker>
+                </div>
+                <div className="flex justify-between w-full">
+                  <p className="text-sm flex flex-col font-medium">
+                    <span>کودک</span>
+                    <span className="text-xs">2 تا 12 سال</span>
+                  </p>
+                  <div className="flex justify-between items-center gap-4">
+                    <button
+                      className="text-lg text-mainPrimary flex items-center justify-center w-[40px] h-[40px] rounded-full border-1 border-mainPrimary"
+                      disabled={
+                        passengers.infants + passengers.children ===
+                        passengers.adults * 5
+                      }
+                      onClick={() =>
+                        dispatch({ type: "setChildren", payload: 1 })
+                      }
+                    >
+                      +
+                    </button>
+                    <span className="text-lg">{passengers.children}</span>
+                    <button
+                      disabled={passengers.children == 0}
+                      className={`text-lg text-mainPrimary flex items-center justify-center w-[40px] h-[40px] rounded-full border-1 border-mainPrimary ${
+                        !passengers.children ? "text-gray_4 border-gray_4" : ""
+                      }`}
+                      onClick={() =>
+                        dispatch({ type: "setChildren", payload: -1 })
+                      }
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-between w-full">
+                  <p className="text-sm flex flex-col font-medium">
+                    <span>نوزاد</span>
+                    <span className="text-xs">0 تا 2 سال</span>
+                  </p>
+                  <div className="flex justify-between items-center gap-4">
+                    <button
+                      disabled={passengers.infants === passengers.adults}
+                      className="text-lg text-mainPrimary flex items-center justify-center w-[40px] h-[40px] rounded-full border-1 border-mainPrimary"
+                      onClick={() =>
+                        dispatch({ type: "setInfants", payload: 1 })
+                      }
+                    >
+                      +
+                    </button>
+                    <span className="text-lg">{passengers.infants}</span>
+                    <button
+                      disabled={passengers.infants == 0}
+                      className={`text-lg text-mainPrimary flex items-center justify-center w-[40px] h-[40px] rounded-full border-1 border-mainPrimary ${
+                        !passengers.infants ? "text-gray_4 border-gray_4" : ""
+                      }`}
+                      onClick={() =>
+                        dispatch({ type: "setInfants", payload: -1 })
+                      }
+                    >
+                      -
+                    </button>
+                  </div>
+                </div>
               </div>
-              <Select
-                options={afterBefores}
-                labelField="name"
-                valueField="value"
-                placeholder="فقط همین تاریخ"
-                onChange={(e) =>
-                  dispatch({ type: "setAfterBefore", payload: e[0].value })
-                }
-                direction="rtl"
-                className="focus:shadow-none text-sm w-[150px] "
-              />
-              <input
-                type="text"
-                className="text-sm py-2 w-[50%]"
-                autoComplete="off"
-              />
-            </div>
-          </div>
-          <div className="flex items-center w-[190px] p-3 border border-gray-300 rounded-xl">
-            <Select>
-              <Option>بزرگسال</Option>
-              <Option>کودک</Option>
-            </Select>
+            )}
           </div>
         </div>
 
         {/* Search Button */}
         <button
           type="submit"
-          className="bg-mainPrimary p-4 text-2xl text-white rounded-xl hover:bg-mainSecondary"
+          className="bg-mainPrimary h-[50px] w-[50px] flex justify-center items-center  text-2xl text-white rounded-xl hover:bg-mainSecondary"
         >
           <CiSearch />
         </button>
@@ -222,14 +451,18 @@ function ParvazFormHome() {
 }
 
 // Custom Input Component for DatePicker
-const DateInput = ({ onFocus, value, onChange, dispatch }) => (
+const DateInput = ({ oneWay, onFocus, value, onChange, dispatch }) => (
   <input
     onFocus={onFocus}
     value={value}
     onChange={onChange}
     type="text"
-    placeholder="تاریخ رفت"
-    className="text-sm py-2 mr-3 border-l-1 w-[80%] border-gray-300"
+    placeholder={oneWay ? "تاریخ رفت" : "تاریخ رفت و برگشت "}
+    className={
+      oneWay
+        ? "text-sm py-2 mr-3 border-l-1 w-[80%] border-gray-300"
+        : "text-sm py-2 mr-3"
+    }
   />
 );
 

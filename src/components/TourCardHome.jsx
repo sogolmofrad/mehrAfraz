@@ -28,7 +28,7 @@ function TourCardHome({ tour }) {
             <span>{tour.arrival}</span>
           </div>
           <div className="bg-white p-xs rounded-lg h-fit ">
-            <p>
+            <div>
               <span className="text-sm text-gray_10 font-medium">
                 {tour.date}
               </span>
@@ -36,7 +36,7 @@ function TourCardHome({ tour }) {
               <span className="text-sx text-gray_6">
                 {tour.duration} شب و {tour.duration + 1} روز
               </span>
-            </p>
+            </div>
 
             <div className="flex justify-between items-center">
               <p className="text-sm text-gray_10 ">
