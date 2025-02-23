@@ -12,7 +12,7 @@ function SearchBoxHome() {
   }
 
   return (
-    <div className="flex flex-col -mt-24 z-10 bg-white rounded-lg py-medium px-base mx-auto items-start max-w-[1150px] w-full">
+    <div className="relative flex flex-col -mt-24 z-10 bg-white rounded-lg py-medium px-base mx-auto items-start max-w-[1150px] w-full">
       <div className="reserveButtonGp flex self-center bg-gray_1 py-4 px-8 rounded-[8rem]">
         <button
           className={`${

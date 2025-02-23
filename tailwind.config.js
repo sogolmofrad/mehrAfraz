@@ -30,6 +30,7 @@ export default {
         linkBlue: "#0D68F0",
         greyTransparent: "rgba(25, 5, 5, 0.49)",
         blackTransparent: "rgba(0,0,0,0.5)",
+      
       },
       backgroundImage: {
         "linear-black":
@@ -80,9 +81,11 @@ export default {
         lg: "24px",
         xl: "32px",
         "2xl": "4rem",
+        searchBox:"5px"
       },
       boxShadow:{
         "normal":"0px 0px 30px 0px rgba(0, 34, 66, 0.35)",
+        "searchBox":"0 0 5px #8798ad",
       }
     },
   },

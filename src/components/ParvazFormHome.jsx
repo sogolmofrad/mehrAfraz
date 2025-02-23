@@ -9,6 +9,14 @@ import { CiLocationOn, CiSearch } from "react-icons/ci";
 import { PiCalendarDotsDuotone } from "react-icons/pi";
 import "react-multi-date-picker/styles/colors/teal.css";
 import Select from "react-dropdown-select";
+import clsx from "clsx";
+import {
+  Combobox,
+  ComboboxInput,
+  ComboboxOptions,
+  ComboboxOption,
+  ComboboxButton,
+} from "@headlessui/react";
 
 const initialState = {
   origin: null,
@@ -66,6 +74,8 @@ function ParvazFormHome({ oneWay }) {
     dispatch,
   ] = useReducer(reducer, initialState);
 
+  const [originQuery, setOriginQuery] = useState("");
+  const [arrivalQuery, setArrivalQuery] = useState("");
   const [isJalali, setIsJalali] = useState(true);
 
   const [showPassengerSearch, setShowpassengerSearch] = useState(false);
@@ -137,28 +147,67 @@ function ParvazFormHome({ oneWay }) {
     };
   }, []);
 
+  const filterOrigins =
+    originQuery === ""
+      ? origins
+      : origins.filter((city) => city.name.includes(originQuery));
+
+  const filterArrivals =
+    arrivalQuery === ""
+      ? arrivals
+      : arrivals.filter((city) => city.name.includes(arrivalQuery));
+
   return (
     <div className="mt-8 w-full">
       <form
-        className="form flex justify-between w-full"
+        className=" form flex justify-between w-full"
         onSubmit={handleSubmit}
       >
         <div className="inputGp flex items-center justify-between gap-4">
           {/* Origin Input */}
 
-          <div className="flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
+          <div className="relative flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
             <div className="bg-gray-100 p-3 rounded-lg">
               <RiFlightTakeoffFill className="size-medium" />
             </div>
-            <Select
-              options={origins}
-              labelField="name"
-              valueField="id"
-              placeholder="مبدا"
-              onChange={(e) => dispatch({ type: "setOrigin", payload: e })}
-              direction="rtl"
-              className="focus:shadow-none text-sm w-[150px] "
-            />
+            <Combobox
+              value={origin}
+              onChange={(value) => {
+                setOriginQuery(value.name); // Update input display
+                dispatch({ type: "setOrigin", payload: value });
+              }}
+            >
+              <ComboboxButton className="w-fit h-[35px] mr-4">
+                <ComboboxInput
+                  placeholder="مبدا"
+                  value={originQuery}
+                  onChange={(event) => setOriginQuery(event.target.value)}
+                  className="w-full text-sm h-full"
+                  required
+                />
+              </ComboboxButton>
+
+              <ComboboxOptions
+                className={clsx(
+                  "w-[200px] rounded-searchBox p-0  bg-white absolute top-full left-[20px] empty:invisible  z-20 shadow-searchBox",
+                  "transition duration-500 ease-in data-[leave]:data-[closed]:opacity-0"
+                )}
+              >
+                <div
+                  className="ep-arrow  rmdp-ep-arrow rmdp-ep-shadow teal visible absolute left-[20px] bottom-full h-[11px] w-[20px] z-101"
+                  direction="top"
+                ></div>
+                {filterOrigins.map((city) => (
+                  <ComboboxOption
+                    key={city.id}
+                    value={city} // Pass the whole object
+                    className="cursor-pointer text-mainPrimary p-4 text-sm hover:bg-gray-200 last:rounded-b-lg"
+                  >
+                    {city.name} {/* Only show the name */}
+                  </ComboboxOption>
+                ))}
+              </ComboboxOptions>
+            </Combobox>
           </div>
 
           {/* Swap Button */}
@@ -167,11 +216,50 @@ function ParvazFormHome({ oneWay }) {
           </button>
 
           {/* Arrival Input */}
-          <div className="flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
-            <div className="bg-gray-100 p-3 rounded-lg">
+          <div className="relative flex items-center w-[220px] p-3 border border-gray-300 rounded-xl">
+            <div className=" bg-gray-100 p-3 rounded-lg">
               <CiLocationOn className="size-medium" />
             </div>
-            <Select
+            <Combobox
+              value={arrival}
+              onChange={(value) => {
+                setArrivalQuery(value.name); // Update input display
+                dispatch({ type: "setArrival", payload: value });
+              }}
+            >
+              <ComboboxButton className="w-fit h-[35px] mr-4">
+                <ComboboxInput
+                  placeholder="مقصد"
+                  value={arrivalQuery}
+                  onChange={(event) => setArrivalQuery(event.target.value)}
+                  className="w-full text-sm h-full"
+                  required
+                />
+              </ComboboxButton>
+
+              <ComboboxOptions
+                className={clsx(
+                  "w-[200px] rounded-searchBox p-0  bg-white absolute top-full left-[20px] empty:invisible  z-20 shadow-searchBox",
+                  "transition duration-500 ease-in data-[leave]:data-[closed]:opacity-0"
+                )}
+              >
+                <div
+                  className="ep-arrow  rmdp-ep-arrow rmdp-ep-shadow teal visible absolute left-[20px] bottom-full h-[11px] w-[20px] z-101"
+                  direction="top"
+                ></div>
+                {filterArrivals.map((city) => (
+                  <ComboboxOption
+                    key={city.id}
+                    value={city} // Pass the whole object
+                    className="cursor-pointer text-mainPrimary p-4 text-sm hover:bg-gray-200 last:rounded-b-searchBox"
+                  >
+                    {city.name} {/* Only show the name */}
+                  </ComboboxOption>
+                ))}
+              </ComboboxOptions>
+            </Combobox>
+
+            {/* <Select
               options={arrivals}
               labelField="name"
               valueField="id"
@@ -179,7 +267,7 @@ function ParvazFormHome({ oneWay }) {
               onChange={(e) => dispatch({ type: "setArrival", payload: e })}
               direction="rtl"
               className="focus:shadow-none text-sm w-[150px] "
-            />
+            /> */}
           </div>
 
           {/* Date Picker */}
@@ -242,17 +330,17 @@ function ParvazFormHome({ oneWay }) {
                     </div>
                   </DatePicker>
                 </div>
-                <Select
-                  options={afterBefores}
-                  labelField="name"
-                  valueField="value"
-                  placeholder="فقط همین تاریخ"
-                  onChange={(e) =>
-                    dispatch({ type: "setAfterBefore", payload: e[0].value })
-                  }
-                  direction="rtl"
-                  className="focus:shadow-none text-sm w-[150px] "
-                />
+                {/* <Select
+                    options={afterBefores}
+                    labelField="name"
+                    valueField="value"
+                    placeholder="فقط همین تاریخ"
+                    onChange={(e) =>
+                      dispatch({ type: "setAfterBefore", payload: e[0].value })
+                    }
+                    direction="rtl"
+                    className="focus:shadow-none text-sm w-[150px] "
+                  /> */}
                 <input
                   type="text"
                   className="text-sm py-2 w-[50%]"
